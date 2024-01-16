@@ -2,23 +2,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
-.hide{
+
+.hide {
   display: none !important;
 }
 
-.hideMobile{
+.hideMobile {
   display: none !important;
 }
 
 #header {
   background-color: #009063;
-  color: #fff; 
+  color: #fff;
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   flex-wrap: wrap;
 }
 
