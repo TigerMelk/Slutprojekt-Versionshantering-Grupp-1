@@ -31,7 +31,7 @@ document.querySelector("#logInForm").addEventListener("click", (event) => {
     const frontPage = document.querySelector("#frontPage");
     
     
-    if(event.target.id == "logInButton"){
+    if (event.target.id == "logInButton") {
         frontPage.classList.add("hide");
         mainPage.classList.remove("hide");
         navBar.classList.remove("hide");
