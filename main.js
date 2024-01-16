@@ -25,7 +25,7 @@ document.querySelector("#logInForm").addEventListener("click", (event) => {
   event.preventDefault();
 
   const mainPage = document.querySelector("#main");
-  const navBar = document.querySelector("nav");
+  const navBar = document.querySelector("#nav");
   const frontPage = document.querySelector("#frontPage");
   const webName = document.querySelector("#webName");
 
@@ -41,5 +41,46 @@ document.querySelector("#logInForm").addEventListener("click", (event) => {
     mainPage.classList.remove("hide");
     navBar.classList.remove("hide");
     console.log("registrera");
+  }
+});
+
+/// Funktionaliteten åt navbar länkarna
+document.querySelector("#nav").addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const homePage = document.querySelector("#home");
+  const messageBoardPage = document.querySelector("#messageboard");
+  const contactPage = document.querySelector("#contact");
+  const aboutUsPage = document.querySelector("#aboutUs");
+  const mainPage = document.querySelector("#main");
+  const navBar = document.querySelector("#nav");
+  const frontPage = document.querySelector("#frontPage");
+  const webName = document.querySelector("#webName");
+
+  if (event.target.id == "homeNav") {
+    messageBoardPage.classList.add("hide");
+    aboutUsPage.classList.add("hide");
+    contactPage.classList.add("hide");
+    homePage.classList.remove("hide");
+  } else if (event.target.id == "messageboardNav") {
+    homePage.classList.add("hide");
+    aboutUsPage.classList.add("hide");
+    contactPage.classList.add("hide");
+    messageBoardPage.classList.remove("hide");
+  } else if (event.target.id == "aboutUsNav") {
+    homePage.classList.add("hide");
+    messageBoardPage.classList.add("hide");
+    contactPage.classList.add("hide");
+    aboutUsPage.classList.remove("hide");
+  } else if (event.target.id == "contactNav") {
+    homePage.classList.add("hide");
+    messageBoardPage.classList.add("hide");
+    aboutUsPage.classList.add("hide");
+    contactPage.classList.remove("hide");
+  } else if (event.target.id == "logoutNav") {
+    mainPage.classList.add("hide");
+    navBar.classList.add("hide");
+    webName.classList.remove("hideMobile");
+    frontPage.classList.remove("hide");
   }
 });

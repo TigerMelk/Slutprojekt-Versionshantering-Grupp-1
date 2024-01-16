@@ -15,13 +15,13 @@
     <header id="header">
       <img src="./Images/Logo.png" alt="Logo" class="logo" />
       <p id="webName">SpyChat</p>
-      <nav class="hide">
+      <nav id="nav" class="hide">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Messageboard</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="logout.html">Logout</a></li>
+          <li><a href="#" id="homeNav">Home</a></li>
+          <li><a href="#" id="messageboardNav">Messageboard</a></li>
+          <li><a href="#" id="aboutUsNav">About Us</a></li>
+          <li><a href="#" id="contactNav">Contact</a></li>
+          <li><a href="#" id="logoutNav">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -50,18 +50,25 @@
     <!--------- main --------->
     <main id="main" class="hide">
       <!--------- home  --------->
-      <section id="home"></section>
+      <section id="home">
+        <h1>Home</h1>
+      </section>
 
       <!--------- messageboard --------->
-      <section id="messageboard" class="hide"></section>
+      <section id="messageboard" class="hide">
+        <h1>Messageboard</h1>
+      </section>
 
       <!--------- contact --------->
       <section id="contact" class="hide">
+        <h1>Contact</h1>
         <form></form>
       </section>
 
       <!--------- about us --------->
-      <section id="about us" class="hide"></section>
+      <section id="aboutUs" class="hide">
+        <h1>About Us</h1>
+      </section>
     </main>
 
     <!--------- footer --------->
