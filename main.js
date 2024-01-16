@@ -1,4 +1,4 @@
-/// Byter mellan log in och register pages
+/// Byter mellan log in och register pages ///
 document.querySelector("#frontPage").addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -20,7 +20,7 @@ document.querySelector("#frontPage").addEventListener("click", (event) => {
   }
 });
 
-/// Övergår till main page. Måste ändras till submit senare
+/// Övergår till main page /// Måste ändras till submit senare ///
 document.querySelector("#logInForm").addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -44,7 +44,7 @@ document.querySelector("#logInForm").addEventListener("click", (event) => {
   }
 });
 
-/// Funktionaliteten åt navbar länkarna
+/// Funktionaliteten åt navbar länkarna /// Simplifiera den ///
 document.querySelector("#nav").addEventListener("click", (event) => {
   event.preventDefault();
 
