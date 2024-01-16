@@ -22,6 +22,19 @@ document.querySelector("#frontPage").addEventListener("click", (event) => {
     };
 });
 
-document.querySelector("#frontPage").addEventListener("submit", (event) => {
+/// Övergår till main page. Måste ändras till submit senare
+document.querySelector("#logInForm").addEventListener("click", (event) => {
     event.preventDefault();
+
+    const mainPage = document.querySelector("#main");
+    const navBar = document.querySelector("nav");
+    const frontPage = document.querySelector("#frontPage");
+    
+    
+    if(event.target.id == "logInButton"){
+        frontPage.classList.add("hide");
+        mainPage.classList.remove("hide");
+        navBar.classList.remove("hide");
+        console.log("ndksjnf");
+    }
 });
