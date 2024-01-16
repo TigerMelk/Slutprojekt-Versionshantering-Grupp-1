@@ -30,20 +30,22 @@
     <div id="frontPage">
       <form id="logInForm">
         <label>Username</label>
-        <input type="text" />
+        <input type="text" id="username" />
         <label>Password</label>
-        <input type="password" />
+        <input type="password" id="password" />
         <button id="logInButton">Log in</button>
         <button id="registerButton" class="hide">Register</button>
       </form>
-      <!--------- login --------->
-      <div id="logIn">
-        <p>To register <span id="switchToRegister">click here!</span></p>
-      </div>
+      <div id="switchFrontPage">
+        <!--------- login --------->
+        <div id="logIn">
+          <p>To register <span id="switchToRegister">click here!</span></p>
+        </div>
 
-      <!--------- create account --------->
-      <div id="createAccount" class="hide">
-        <p>To log in <span id="switchToLogIn">click here!</span></p>
+        <!--------- create account --------->
+        <div id="createAccount" class="hide">
+          <p>To log in <span id="switchToLogIn">click here!</span></p>
+        </div>
       </div>
     </div>
 
