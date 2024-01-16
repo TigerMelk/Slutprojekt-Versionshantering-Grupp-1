@@ -29,14 +29,17 @@ document.querySelector("#logInForm").addEventListener("click", (event) => {
     const mainPage = document.querySelector("#main");
     const navBar = document.querySelector("nav");
     const frontPage = document.querySelector("#frontPage");
+    const webName = document.querySelector("#webName")
     
     if (event.target.id == "logInButton") {
+        webName.classList.add("hideMobile")
         frontPage.classList.add("hide");
         mainPage.classList.remove("hide");
         navBar.classList.remove("hide");
         console.log("logga in");
     }
     else if(event.target.id == "registerButton"){
+        webName.classList.add("hideMobile")
         frontPage.classList.add("hide");
         mainPage.classList.remove("hide");
         navBar.classList.remove("hide");
