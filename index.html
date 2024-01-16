@@ -24,20 +24,22 @@
 
     <!--------- frontpage --------->
     <div id="frontPage">
-        <button id="logInButton">Log In</button>
-        <button id="registerButton">Register</button>
+        <form>
+            <label>Username</label>
+            <input type="text">
+            <label>Password</label>
+            <input type="password">
+        </form>
         <!--------- login --------->
-        <div id="logIn" class="hide">
-            <form>
-
-            </form>
+        <div id="logIn">
+            <button id="logInButton">Log in</button>
+            <p>To register <span>click here!</span></p>
         </div>
 
         <!--------- create account --------->
         <div id="createAccount" class="hide">
-            <form>
-                
-            </form>
+            <button id="registerButton">Register</button>
+            <p>To log in <span>click here!</span></p>
         </div>
         
     </div>
