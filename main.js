@@ -30,11 +30,16 @@ document.querySelector("#logInForm").addEventListener("click", (event) => {
     const navBar = document.querySelector("nav");
     const frontPage = document.querySelector("#frontPage");
     
-    
     if(event.target.id == "logInButton"){
         frontPage.classList.add("hide");
         mainPage.classList.remove("hide");
         navBar.classList.remove("hide");
-        console.log("ndksjnf");
+        console.log("logga in");
+    }
+    else if(event.target.id == "registerButton"){
+        frontPage.classList.add("hide");
+        mainPage.classList.remove("hide");
+        navBar.classList.remove("hide");
+        console.log("registrera");
     }
 });
