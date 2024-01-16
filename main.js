@@ -8,13 +8,13 @@ document.querySelector("#frontPage").addEventListener("click", (event) => {
     const createAccount = document.querySelector("#createAccount");
     const registerButton = document.querySelector("#registerButton");
 
-    if(event.target.id == "switchToRegister"){
+    if (event.target.id == "switchToRegister") {
         logIn.classList.add("hide");
         logInButton.classList.add("hide");
         createAccount.classList.remove("hide");
         registerButton.classList.remove("hide");
     }
-    else if(event.target.id == "switchToLogIn"){
+    else if (event.target.id == "switchToLogIn") {
         createAccount.classList.add("hide");
         registerButton.classList.add("hide");
         logIn.classList.remove("hide");
