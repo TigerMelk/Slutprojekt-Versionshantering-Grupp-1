@@ -16,7 +16,7 @@ document.querySelector("#frontPage").addEventListener("click", (event) => {
     }
     else if(event.target.id == "switchToLogIn"){
         createAccount.classList.add("hide");
-        registerButton.classList.add("hide")
+        registerButton.classList.add("hide");
         logIn.classList.remove("hide");
         logInButton.classList.remove("hide");
     };
