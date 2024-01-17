@@ -175,3 +175,35 @@ button {
 .menu a:active, a:visited{
   color: #EDEDED;
 }
+
+/* Messageboard */
+
+.secretIdentity{
+  text-align: center;
+}
+
+.messageField{
+  border: #383838 solid 2px;
+  width: 90%;
+  height: 600px;
+  margin: auto auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.sendMessageBtn{
+  width: 50px;
+}
+
+.messageInput{
+  width: 90%;
+  margin: auto auto;  
+  border: #383838 solid 2px;
+  border-top: none;
+  padding-top: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.messageTextInput{
+  width: 80%;
+  margin-left: 10px;
+}
