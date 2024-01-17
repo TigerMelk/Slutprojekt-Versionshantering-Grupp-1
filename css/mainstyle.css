@@ -223,3 +223,11 @@ p{
 .about{
   margin-top: 40px;
 }
+
+footer { 
+  background-color: #383838;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
