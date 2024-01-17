@@ -87,3 +87,25 @@ document.querySelector("#nav").addEventListener("click", (event) => {
     frontPage.classList.remove("hide");
   }
 });
+
+
+// Hamburgermenu 
+
+const hamburgerMenu = document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const menu = document.querySelector(".menu");
+  const closeIcon = document.querySelector("#closeIcon");
+  const menuIcon = document.querySelector("#menuIcon");
+
+  if (event.target.id == "menuIcon") {
+    menu.classList.add("showMenu");
+    menuIcon.classList.add("hide");
+    closeIcon.classList.remove("hide");
+  }
+  else if (event.target.id == "closeIcon") {
+    closeIcon.classList.add("hide");
+    menuIcon.classList.remove("hide");
+    menu.classList.remove("showMenu");
+  }
+});
