@@ -16,22 +16,26 @@
       <img src="./Images/Logo white.png" alt="Logo" class="logo" />
       <p id="webName">SpyChat</p>
       <nav id="nav" class="hide">
-        <ul>
+        <ul class="menu">
           <li><a href="#" id="homeNav">Home</a></li>
           <li><a href="#" id="messageboardNav">Messageboard</a></li>
           <li><a href="#" id="aboutUsNav">About Us</a></li>
           <li><a href="#" id="contactNav">Contact</a></li>
           <li><a href="#" id="logoutNav">Logout</a></li>
         </ul>
+        <button class="hamburgerMenu">
+            <img id="menuIcon" src="./Images/menuWhite.png" alt="hamburgerMenu">
+            <img class="hide" id="closeIcon" src="./Images/closeWhite.png" alt="closeIcon">          
+        </button>
       </nav>
     </header>
 
     <!--------- frontpage --------->
     <div id="frontPage" class="frontPage">
       <form id="logInForm">
-        <label>Username</label>
+        <label for="username">username</label>
         <input type="text" id="username" />
-        <label>Password</label>
+        <label for="password">password</label>
         <input type="password" id="password" />
         <button id="logInButton">Log in</button>
         <button id="registerButton" class="hide">Register</button>
