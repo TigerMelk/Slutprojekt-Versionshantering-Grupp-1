@@ -57,17 +57,9 @@ nav a:hover {
 
 /* form */
 
-.frontpage {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  align-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: row;
+.frontPage {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .logInForm {
@@ -86,6 +78,7 @@ nav a:hover {
 label {
   display: flex;
   margin-bottom: 5px;
+  margin-top: 20px;
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: column;
