@@ -207,3 +207,13 @@ button {
   width: 80%;
   margin-left: 10px;
 }
+
+/* About us */
+
+.aboutUsDiv{
+  text-align: center;
+}
+
+.about{
+  margin-top: 40px;
+}
