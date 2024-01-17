@@ -68,27 +68,32 @@ document.querySelector("#nav").addEventListener("click", (event) => {
   const navBar = document.querySelector("#nav");
   const frontPage = document.querySelector("#frontPage");
   const webName = document.querySelector("#webName");
+  const menu = document.querySelector(".menu");
 
   if (event.target.id == "homeNav") {
     messageBoardPage.classList.add("hide");
     aboutUsPage.classList.add("hide");
     contactPage.classList.add("hide");
     homePage.classList.remove("hide");
+    menu.classList.remove("showMenu");
   } else if (event.target.id == "messageboardNav") {
     homePage.classList.add("hide");
     aboutUsPage.classList.add("hide");
     contactPage.classList.add("hide");
     messageBoardPage.classList.remove("hide");
+    menu.classList.remove("showMenu");
   } else if (event.target.id == "aboutUsNav") {
     homePage.classList.add("hide");
     messageBoardPage.classList.add("hide");
     contactPage.classList.add("hide");
     aboutUsPage.classList.remove("hide");
+    menu.classList.remove("showMenu");
   } else if (event.target.id == "contactNav") {
     homePage.classList.add("hide");
     messageBoardPage.classList.add("hide");
     aboutUsPage.classList.add("hide");
     contactPage.classList.remove("hide");
+    menu.classList.remove("showMenu");
   } else if (event.target.id == "logoutNav") {
     mainPage.classList.add("hide");
     navBar.classList.add("hide");
