@@ -117,9 +117,9 @@ button {
 .hamburgerMenu{
   background-color: #383838;
   border: none;
-  position: fixed !important;
-  top: 1 !important;
-  right: 20 !important;
+  position: fixed;
+  top: 1;
+  right: 20;
 }
 
 .menuIconLi{
