@@ -52,3 +52,20 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+#frontPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+}
+#logInForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  align-items: center;
+  align-content: space-evenly;
+  gap: 5px;
+}

@@ -1,6 +1,5 @@
 /// Byter mellan log in och register pages ///
-document
-  .querySelector("#switchFrontPage")
+document.querySelector("#switchFrontPage")
   .addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -23,8 +22,17 @@ document
   });
 
 /// Övergår till main page /// Kolla varför activeElements fungerar ///
-document.querySelector("#logInForm").addEventListener("submit", (event) => {
+
+const loginForm = document.querySelector("#logInForm")
+loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  const username = document.querySelector('#username').value
+  const password = document.querySelector('#password').value
+
+  console.log(username);
+  console.log(password);
+
 
   const mainPage = document.querySelector("#main");
   const navBar = document.querySelector("#nav");
@@ -45,6 +53,7 @@ document.querySelector("#logInForm").addEventListener("submit", (event) => {
     navBar.classList.remove("hide");
     console.log("registrera");
   }
+  loginForm.reset();
 });
 
 /// Funktionaliteten åt navbar länkarna /// Simplifiera den ///
