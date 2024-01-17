@@ -1,4 +1,6 @@
-/// Byter mellan log in och register pages ///
+import { closeHamburgerMenuInHamburgerMenu } from "./modules/interface.js";
+
+/// Byter mellan log in och register pages /// Simplifiera den ///
 document
   .querySelector("#switchFrontPage")
   .addEventListener("click", (event) => {
@@ -22,7 +24,7 @@ document
     }
   });
 
-/// Övergår till main page /// Kolla varför activeElements fungerar ///
+/// Övergår till main page /// Simplifiera den ///
 
 const loginForm = document.querySelector("#logInForm");
 loginForm.addEventListener("submit", (event) => {
@@ -56,50 +58,86 @@ loginForm.addEventListener("submit", (event) => {
   loginForm.reset();
 });
 
-/// Funktionaliteten åt navbar länkarna /// Simplifiera den ///
-document.querySelector("#nav").addEventListener("click", (event) => {
-  event.preventDefault();
+/// Funktionaliteten åt navbar länkarna
+document.querySelectorAll("#nav a").forEach((menuLink) => {
+  menuLink.addEventListener("click", (event) => {
+    event.preventDefault();
 
-  const homePage = document.querySelector("#home");
-  const messageBoardPage = document.querySelector("#messageboard");
-  const contactPage = document.querySelector("#contact");
-  const aboutUsPage = document.querySelector("#aboutUs");
-  const mainPage = document.querySelector("#main");
-  const navBar = document.querySelector("#nav");
-  const frontPage = document.querySelector("#frontPage");
-  const webName = document.querySelector("#webName");
-  const menu = document.querySelector(".menu");
+    const homePage = document.querySelector("#home");
+    const messageboardPage = document.querySelector("#messageboard");
+    const contactPage = document.querySelector("#contact");
+    const aboutUsPage = document.querySelector("#aboutUs");
+    const mainPage = document.querySelector("#main");
+    const navBar = document.querySelector("#nav");
+    const frontPage = document.querySelector("#frontPage");
+    const webName = document.querySelector("#webName");
 
-  if (event.target.id == "homeNav") {
-    messageBoardPage.classList.add("hide");
-    aboutUsPage.classList.add("hide");
-    contactPage.classList.add("hide");
-    homePage.classList.remove("hide");
-    menu.classList.remove("showMenu");
-  } else if (event.target.id == "messageboardNav") {
     homePage.classList.add("hide");
-    aboutUsPage.classList.add("hide");
+    messageboardPage.classList.add("hide");
     contactPage.classList.add("hide");
-    messageBoardPage.classList.remove("hide");
-    menu.classList.remove("showMenu");
-  } else if (event.target.id == "aboutUsNav") {
-    homePage.classList.add("hide");
-    messageBoardPage.classList.add("hide");
-    contactPage.classList.add("hide");
-    aboutUsPage.classList.remove("hide");
-    menu.classList.remove("showMenu");
-  } else if (event.target.id == "contactNav") {
-    homePage.classList.add("hide");
-    messageBoardPage.classList.add("hide");
     aboutUsPage.classList.add("hide");
-    contactPage.classList.remove("hide");
-    menu.classList.remove("showMenu");
-  } else if (event.target.id == "logoutNav") {
-    mainPage.classList.add("hide");
-    navBar.classList.add("hide");
-    webName.classList.remove("hideMobile");
-    frontPage.classList.remove("hide");
-  }
+
+    switch (event.currentTarget.id) {
+      case "homeNav":
+        homePage.classList.remove("hide");
+        closeHamburgerMenuInHamburgerMenu();
+        break;
+      case "messageboardNav":
+        messageboardPage.classList.remove("hide");
+        closeHamburgerMenuInHamburgerMenu();
+        break;
+      case "aboutUsNav":
+        contactPage.classList.remove("hide");
+        closeHamburgerMenuInHamburgerMenu();
+        break;
+      case "contactNav":
+        aboutUsPage.classList.remove("hide");
+        closeHamburgerMenuInHamburgerMenu();
+        break;
+      case "logoutNav":
+        homePage.classList.remove("hide");
+        mainPage.classList.add("hide");
+        navBar.classList.add("hide");
+        frontPage.classList.remove("hide");
+        webName.classList.remove("hideMobile");
+        closeHamburgerMenuInHamburgerMenu();
+        break;
+    }
+
+    if (event.target.id == logoutNav) {
+    }
+
+    // if (event.target.id == "homeNav") {
+    //   messageBoardPage.classList.add("hide");
+    //   aboutUsPage.classList.add("hide");
+    //   contactPage.classList.add("hide");
+    //   homePage.classList.remove("hide");
+    //   menu.classList.remove("showMenu");
+    // } else if (event.target.id == "messageboardNav") {
+    //   homePage.classList.add("hide");
+    //   aboutUsPage.classList.add("hide");
+    //   contactPage.classList.add("hide");
+    //   messageBoardPage.classList.remove("hide");
+    //   menu.classList.remove("showMenu");
+    // } else if (event.target.id == "aboutUsNav") {
+    //   homePage.classList.add("hide");
+    //   messageBoardPage.classList.add("hide");
+    //   contactPage.classList.add("hide");
+    //   aboutUsPage.classList.remove("hide");
+    //   menu.classList.remove("showMenu");
+    // } else if (event.target.id == "contactNav") {
+    //   homePage.classList.add("hide");
+    //   messageBoardPage.classList.add("hide");
+    //   aboutUsPage.classList.add("hide");
+    //   contactPage.classList.remove("hide");
+    //   menu.classList.remove("showMenu");
+    // } else if (event.target.id == "logoutNav") {
+    //   mainPage.classList.add("hide");
+    //   navBar.classList.add("hide");
+    //   webName.classList.remove("hideMobile");
+    //   frontPage.classList.remove("hide");
+    // }
+  });
 });
 
 // Hamburgermenu
