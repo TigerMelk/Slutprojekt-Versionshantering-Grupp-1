@@ -8,4 +8,16 @@ function closeHamburgerMenuInHamburgerMenu() {
   menu.classList.remove("showMenu");
 }
 
-export { closeHamburgerMenuInHamburgerMenu };
+function addClassToElement(elements, classes) {
+  elements.forEach((element) => element.classList.add(classes));
+}
+
+function removeClassToElement(elements, classes) {
+  elements.forEach((element) => element.classList.remove(classes));
+}
+
+export {
+  closeHamburgerMenuInHamburgerMenu,
+  addClassToElement,
+  removeClassToElement,
+};

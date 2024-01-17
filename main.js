@@ -1,4 +1,8 @@
-import { closeHamburgerMenuInHamburgerMenu } from "./modules/interface.js";
+import {
+  closeHamburgerMenuInHamburgerMenu,
+  addClassToElement,
+  removeClassToElement,
+} from "./modules/interface.js";
 
 /// Byter mellan log in och register pages /// Simplifiera den ///
 document
@@ -12,20 +16,15 @@ document
     const registerButton = document.querySelector("#registerButton");
 
     if (event.target.id == "switchToRegister") {
-      logIn.classList.add("hide");
-      logInButton.classList.add("hide");
-      createAccount.classList.remove("hide");
-      registerButton.classList.remove("hide");
+      addClassToElement([logIn, logInButton], "hide");
+      removeClassToElement([createAccount, registerButton], "hide");
     } else if (event.target.id == "switchToLogIn") {
-      createAccount.classList.add("hide");
-      registerButton.classList.add("hide");
-      logIn.classList.remove("hide");
-      logInButton.classList.remove("hide");
+      addClassToElement([createAccount, registerButton], "hide");
+      removeClassToElement([logIn, logInButton], "hide");
     }
   });
 
 /// Övergår till main page /// Simplifiera den ///
-
 document.querySelector("#logInForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -43,20 +42,17 @@ document.querySelector("#logInForm").addEventListener("submit", (event) => {
   const activeElement = document.activeElement;
 
   if (activeElement.id == "logInButton") {
-    webName.classList.add("hideMobile");
-    frontPage.classList.add("hide");
-    mainPage.classList.remove("hide");
-    navBar.classList.remove("hide");
+    addClassToElement([webName], "hideMobile");
+    addClassToElement([frontPage], "hide");
+    removeClassToElement([mainPage, navBar], "hide");
   } else if (activeElement.id == "registerButton") {
     const logIn = document.querySelector("#logIn");
     const logInButton = document.querySelector("#logInButton");
     const createAccount = document.querySelector("#createAccount");
     const registerButton = document.querySelector("#registerButton");
 
-    createAccount.classList.add("hide");
-    registerButton.classList.add("hide");
-    logIn.classList.remove("hide");
-    logInButton.classList.remove("hide");
+    addClassToElement([createAccount, registerButton], "hide");
+    removeClassToElement([logIn, logInButton], "hide");
   }
   loginForm.reset();
 });
@@ -75,41 +71,39 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
     const frontPage = document.querySelector("#frontPage");
     const webName = document.querySelector("#webName");
 
-    homePage.classList.add("hide");
-    messageboardPage.classList.add("hide");
-    contactPage.classList.add("hide");
-    aboutUsPage.classList.add("hide");
+    addClassToElement(
+      [homePage, messageboardPage, aboutUsPage, contactPage],
+      "hide"
+    );
 
     switch (event.currentTarget.id) {
       case "homeNav":
-        homePage.classList.remove("hide");
+        removeClassToElement([homePage], "hide");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "messageboardNav":
-        messageboardPage.classList.remove("hide");
+        removeClassToElement([messageboardPage], "hide");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "aboutUsNav":
-        contactPage.classList.remove("hide");
+        removeClassToElement([aboutUsPage], "hide");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "contactNav":
-        aboutUsPage.classList.remove("hide");
+        removeClassToElement([contactPage], "hide");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "logoutNav":
-        homePage.classList.remove("hide");
-        mainPage.classList.add("hide");
-        navBar.classList.add("hide");
-        frontPage.classList.remove("hide");
-        webName.classList.remove("hideMobile");
+        addClassToElement([mainPage, navBar], "hide");
+        removeClassToElement([homePage, frontPage], "hide");
+        removeClassToElement([webName], "hideMobile");
         closeHamburgerMenuInHamburgerMenu();
         break;
     }
   });
 });
 
-// Hamburgermenu
+/// Hamburgermenu
 document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -118,12 +112,12 @@ document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
   const menuIcon = document.querySelector("#menuIcon");
 
   if (event.target.id == "menuIcon") {
-    menu.classList.add("showMenu");
-    menuIcon.classList.add("hide");
-    closeIcon.classList.remove("hide");
+    addClassToElement([menu], "showMenu");
+    addClassToElement([menuIcon], "hide");
+    removeClassToElement([closeIcon], "hide");
   } else if (event.target.id == "closeIcon") {
-    closeIcon.classList.add("hide");
-    menuIcon.classList.remove("hide");
-    menu.classList.remove("showMenu");
+    addClassToElement([closeIcon], "hide");
+    removeClassToElement([menuIcon], "hide");
+    removeClassToElement([menu], "showMenu");
   }
 });
