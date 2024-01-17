@@ -130,9 +130,9 @@ p{
 .hamburgerMenu{
   background-color: #383838;
   border: none;
-  position: fixed;
-  top: 1;
-  right: 20;
+  position: absolute;
+  top: 25px;
+  right: 20px;
   width: 50px;
   padding-top: 0;
   
