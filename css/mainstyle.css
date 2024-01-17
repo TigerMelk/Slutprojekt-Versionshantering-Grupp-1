@@ -89,12 +89,13 @@ label {
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: column;
-  align-content: stretch;
   justify-content: space-evenly;
 }
 
 input {
-  width: 260px;
+  display: flex;
+  margin: auto auto;
+  width: 350px;
   padding: 8px;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -102,15 +103,27 @@ input {
 }
 
 button {
-  width: 100%;
+  display: block;
+  margin: auto;
+  justify-content: space-between;
+  width: 350px;
   padding: 10px;
   background-color: #383838;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
+p{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px
+}
+.blueText{
+  color: blue;
+  padding: 4px;
+}
 
 /* Hamburger menu */
 
