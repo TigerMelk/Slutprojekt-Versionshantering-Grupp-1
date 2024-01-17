@@ -26,7 +26,6 @@
 .logo {
   max-width: 50px;
   height: auto;
-  background-color: #EDEDED;
   z-index: 1000;
 }
 
@@ -118,9 +117,9 @@ button {
 .hamburgerMenu{
   background-color: #383838;
   border: none;
-  position: fixed;
-  top: 1;
-  right: 20;
+  position: fixed !important;
+  top: 1 !important;
+  right: 20 !important;
 }
 
 .menuIconLi{
