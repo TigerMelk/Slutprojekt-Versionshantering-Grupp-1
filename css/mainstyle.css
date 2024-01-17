@@ -13,7 +13,7 @@
 }
 
 #header {
-  background-color: #009063;
+  background-color: #383838;
   color: #fff;
   padding: 10px;
   display: flex;
@@ -21,6 +21,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
 
 .logo {
   max-width: 50px;
@@ -54,6 +55,63 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+/* form */
+
+.frontpage {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.logInForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+label {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-evenly;
+}
+
+input {
+  width: 260px;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #383838;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 /* Hamburger menu */
 
