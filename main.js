@@ -26,10 +26,10 @@ document
 
 /// Övergår till main page /// Simplifiera den ///
 
-const loginForm = document.querySelector("#logInForm");
-loginForm.addEventListener("submit", (event) => {
+document.querySelector("#logInForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
+  const loginForm = document.querySelector("#logInForm");
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
 
@@ -47,13 +47,16 @@ loginForm.addEventListener("submit", (event) => {
     frontPage.classList.add("hide");
     mainPage.classList.remove("hide");
     navBar.classList.remove("hide");
-    console.log("logga in");
   } else if (activeElement.id == "registerButton") {
-    webName.classList.add("hideMobile");
-    frontPage.classList.add("hide");
-    mainPage.classList.remove("hide");
-    navBar.classList.remove("hide");
-    console.log("registrera");
+    const logIn = document.querySelector("#logIn");
+    const logInButton = document.querySelector("#logInButton");
+    const createAccount = document.querySelector("#createAccount");
+    const registerButton = document.querySelector("#registerButton");
+
+    createAccount.classList.add("hide");
+    registerButton.classList.add("hide");
+    logIn.classList.remove("hide");
+    logInButton.classList.remove("hide");
   }
   loginForm.reset();
 });
@@ -103,40 +106,6 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
         closeHamburgerMenuInHamburgerMenu();
         break;
     }
-
-    if (event.target.id == logoutNav) {
-    }
-
-    // if (event.target.id == "homeNav") {
-    //   messageBoardPage.classList.add("hide");
-    //   aboutUsPage.classList.add("hide");
-    //   contactPage.classList.add("hide");
-    //   homePage.classList.remove("hide");
-    //   menu.classList.remove("showMenu");
-    // } else if (event.target.id == "messageboardNav") {
-    //   homePage.classList.add("hide");
-    //   aboutUsPage.classList.add("hide");
-    //   contactPage.classList.add("hide");
-    //   messageBoardPage.classList.remove("hide");
-    //   menu.classList.remove("showMenu");
-    // } else if (event.target.id == "aboutUsNav") {
-    //   homePage.classList.add("hide");
-    //   messageBoardPage.classList.add("hide");
-    //   contactPage.classList.add("hide");
-    //   aboutUsPage.classList.remove("hide");
-    //   menu.classList.remove("showMenu");
-    // } else if (event.target.id == "contactNav") {
-    //   homePage.classList.add("hide");
-    //   messageBoardPage.classList.add("hide");
-    //   aboutUsPage.classList.add("hide");
-    //   contactPage.classList.remove("hide");
-    //   menu.classList.remove("showMenu");
-    // } else if (event.target.id == "logoutNav") {
-    //   mainPage.classList.add("hide");
-    //   navBar.classList.add("hide");
-    //   webName.classList.remove("hideMobile");
-    //   frontPage.classList.remove("hide");
-    // }
   });
 });
 
