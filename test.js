@@ -15,20 +15,17 @@
 
 // }
 
-
-
-
 const url =
   "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/boys/.json";
 fetch(url, {
   method: "POST",
   body: JSON.stringify({
     username: "blahname",
-    password: 1338
+    password: 1338,
   }),
   headers: {
-    "Content-type": "application/json; charset=UTF-8"
-  }
+    "Content-type": "application/json; charset=UTF-8",
+  },
 })
   .then((res) => res.json())
   .then((data) => {
@@ -36,6 +33,4 @@ fetch(url, {
   });
 
 //unfinsished function
-function userameAndPassword(name, password) {
-
-}
+function userameAndPassword(name, password) {}
