@@ -33,16 +33,6 @@ const db = getDatabase(app);
 const BASE_URL =
   "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/.json";
 
-// function writeUserData(userId, name, email, imageUrl) {
-//   set(ref(db, 'users/' + userId), {
-//     username: name,
-//     email: email,
-//     profile_picture: imageUrl
-//   });
-// }
-
-// writeUserData("hej", "hello", "tjena", "ok")
-
 // async function getData() {
 //   let response = await fetch(BASE_URL);
 //   let data = await response.json();
