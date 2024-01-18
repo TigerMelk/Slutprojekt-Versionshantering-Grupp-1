@@ -4,59 +4,75 @@ import {
   removeClassToElement,
 } from "./modules/interface.js";
 
+// globala variabler//
+const loginForm = document.querySelector("#logInForm");
+const registerSwitch = document.querySelector('#switchToRegister')
+const loginSwitch = document.querySelector('#switchToLogIn')
+const logIn = document.querySelector("#logIn");
+const logInButton = document.querySelector("#logInButton");
+const createAccount = document.querySelector("#createAccount");
+const registerButton = document.querySelector("#registerButton");
+const mainPage = document.querySelector("#main");
+const navBar = document.querySelector("#nav");
+const frontPage = document.querySelector("#frontPage");
+const webName = document.querySelector("#webName");
+
 /// Byter mellan log in och register pages /// Simplifiera den ///
-document
-  .querySelector("#switchFrontPage")
-  .addEventListener("click", (event) => {
-    event.preventDefault();
+loginForm.addEventListener("submit", submitHandler)
+registerSwitch.addEventListener('click', registerHandler)
+loginSwitch.addEventListener('click', loginHandler)
 
-    const logIn = document.querySelector("#logIn");
-    const logInButton = document.querySelector("#logInButton");
-    const createAccount = document.querySelector("#createAccount");
-    const registerButton = document.querySelector("#registerButton");
+function registerHandler(event) {
+  event.preventDefault();
+  addClassToElement([logIn, logInButton], "hide");
+  removeClassToElement([createAccount, registerButton], "hide");
+}
+function loginHandler(event) {
+  event.preventDefault();
+  addClassToElement([createAccount, registerButton], "hide");
+  removeClassToElement([logIn, logInButton], "hide");
+}
+// document.querySelector("#switchFrontPage")
+//   .addEventListener("click", (event) => {
+//     event.preventDefault();
 
-    if (event.target.id == "switchToRegister") {
-      addClassToElement([logIn, logInButton], "hide");
-      removeClassToElement([createAccount, registerButton], "hide");
-    } else if (event.target.id == "switchToLogIn") {
-      addClassToElement([createAccount, registerButton], "hide");
-      removeClassToElement([logIn, logInButton], "hide");
-    }
-  });
+// const logIn = document.querySelector("#logIn");
+// const logInButton = document.querySelector("#logInButton");
+// const createAccount = document.querySelector("#createAccount");
+// const registerButton = document.querySelector("#registerButton");
+
+//     if (event.target.id == "switchToRegister") {
+//     addClassToElement([logIn, logInButton], "hide");
+//     removeClassToElement([createAccount, registerButton], "hide");
+//     } else if (event.target.id == "switchToLogIn") {
+//       addClassToElement([createAccount, registerButton], "hide");
+//       removeClassToElement([logIn, logInButton], "hide");
+//     }
+//   });
 
 /// Övergår till main page /// Simplifiera den ///
-document.querySelector("#logInForm").addEventListener("submit", (event) => {
+loginForm.addEventListener("submit", submitHandler)
+function submitHandler(event) {
   event.preventDefault();
 
-  const loginForm = document.querySelector("#logInForm");
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
 
   console.log(username);
   console.log(password);
-
-  const mainPage = document.querySelector("#main");
-  const navBar = document.querySelector("#nav");
-  const frontPage = document.querySelector("#frontPage");
-  const webName = document.querySelector("#webName");
-  const activeElement = document.activeElement;
-
-  if (activeElement.id == "logInButton") {
-    addClassToElement([webName], "hideMobile");
-    addClassToElement([frontPage], "hide");
-    removeClassToElement([mainPage, navBar], "hide");
-  } else if (activeElement.id == "registerButton") {
-    const logIn = document.querySelector("#logIn");
-    const logInButton = document.querySelector("#logInButton");
-    const createAccount = document.querySelector("#createAccount");
-    const registerButton = document.querySelector("#registerButton");
-
-    addClassToElement([createAccount, registerButton], "hide");
-    removeClassToElement([logIn, logInButton], "hide");
-  }
+  addClassToElement([webName], "hideMobile");
+  addClassToElement([frontPage], "hide");
+  removeClassToElement([mainPage, navBar], "hide");
+  // if (activeElement.id == "logInButton") {
+  //   addClassToElement([webName], "hideMobile");
+  //   addClassToElement([frontPage], "hide");
+  //   removeClassToElement([mainPage, navBar], "hide");
+  // } else if (activeElement.id == "registerButton") {
+  //   addClassToElement([createAccount, registerButton], "hide");
+  //   removeClassToElement([logIn, logInButton], "hide");
+  // }
   loginForm.reset();
-});
-
+}
 /// Funktionaliteten åt navbar länkarna
 document.querySelectorAll("#nav a").forEach((menuLink) => {
   menuLink.addEventListener("click", (event) => {
