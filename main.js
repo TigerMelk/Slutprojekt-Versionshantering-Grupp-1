@@ -63,9 +63,10 @@ function loginHandler(event) {
   removeClassToElement([mainPage, navBar], "hide");
 
   loginForm.reset();
+
+  //footerDOM.setAttribute("postion", "relative")
   let footerDOM = document.getElementById("footer");
   console.log(footerDOM);
-  //footerDOM.setAttribute("postion", "relative")
   footerDOM.style.position = "relative";
 }
 
@@ -84,6 +85,11 @@ function registerHandler(event) {
   removeClassToElement([mainPage, navBar], "hide");
 
   registerForm.reset();
+
+  //footerDOM.setAttribute("postion", "relative")
+  let footerDOM = document.getElementById("footer");
+  console.log(footerDOM);
+  footerDOM.style.position = "relative";
 }
 
 // Funktionaliteten åt navbar länkarna
