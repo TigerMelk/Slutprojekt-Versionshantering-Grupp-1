@@ -1,16 +1,23 @@
 /*Tests for fetch*/
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, set, onValue, remove, push, onChildAdded, onChildRemoved } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"; // <---
-
-
+import {
+  getDatabase,
+  ref,
+  set,
+  onValue,
+  remove,
+  push,
+  onChildAdded,
+  onChildRemoved,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"; // <---
 
 const firebaseConfig = {
-
   apiKey: "AIzaSyCf1AUREbV5BzyIb7_5nrj4fjFxcFL8jM8",
 
   authDomain: "spychat-a5f8e.firebaseapp.com",
 
-  databaseURL: "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL:
+    "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app",
 
   projectId: "spychat-a5f8e",
 
@@ -18,15 +25,13 @@ const firebaseConfig = {
 
   messagingSenderId: "644385877729",
 
-  appId: "1:644385877729:web:eeab1dc8e5763371a511a0"
-
+  appId: "1:644385877729:web:eeab1dc8e5763371a511a0",
 };
-
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const BASE_URL = "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/boys/.json";
-
+const BASE_URL =
+  "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/boys/.json";
 
 // function writeUserData(userId, name, email, imageUrl) {
 //   set(ref(db, 'users/' + userId), {
@@ -37,7 +42,6 @@ const BASE_URL = "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedataba
 // }
 
 // writeUserData("hej", "hello", "tjena", "ok")
-
 
 async function getData() {
   let response = await fetch(BASE_URL);
@@ -70,7 +74,6 @@ async function putData() {
   let response = await fetch(BASE_URL, requestOptions);
   let data = await response.json();
   console.log(data);
-
 }
 putData();
 // async function patchData() {
@@ -96,12 +99,5 @@ putData();
 //   console.log(data);
 // }
 
-
-
-
-
-
-
 // //unfinsished function
 // function userameAndPassword(name, password) {
-
