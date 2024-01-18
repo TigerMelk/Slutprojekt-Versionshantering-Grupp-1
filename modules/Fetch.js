@@ -9,7 +9,7 @@ import {
     push,
     onChildAdded,
     onChildRemoved,
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"; // <---
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCf1AUREbV5BzyIb7_5nrj4fjFxcFL8jM8",
@@ -30,81 +30,74 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const BASE_URL =
-    "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/.json";
-
+const BASE_URL = "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/.json";
 
 ////////////////////////////////////////////////////////
 ////////////////////////GET DATA\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
-// async function getData() {
-//   let response = await fetch(BASE_URL);
-//   let data = await response.json();
-//   console.log(data);
-// }
-// getData();
-
+export async function getData() {
+    let response = await fetch(BASE_URL);
+    let data = await response.json();
+    console.log(data);
+}
 ////////////////////////////////////////////////////////
 ////////////////////////POST DATA\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
-// async function postData() {
-//   let messageObject = { text: "Hello world", time: new Date() };
+export async function postData() {
+    let messageObject = { text: "Hello world", time: new Date() };
 
-//   const requestOptions = {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(messageObject),
-//   };
+    const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(messageObject),
+    };
 
-//   let response = await fetch(BASE_URL, requestOptions);
-//   let data = await response.json();
-//   console.log(data);
-// }
-
+    let response = await fetch(BASE_URL, requestOptions);
+    let data = await response.json();
+    console.log(data);
+}
 ////////////////////////////////////////////////////////
 ////////////////////////PUT DATA\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
-// async function putData() {
-//   let messageObject = { text: "Hello world put", time: new Date() };
+export async function putData() {
+    let messageObject = { text: "Hello world put", time: new Date() };
 
-//   const requestOptions = {
-//     method: "PUT",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(messageObject),
-//   };
+    const requestOptions = {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(messageObject),
+    };
 
-//   let response = await fetch(BASE_URL, requestOptions);
-//   let data = await response.json();
-//   console.log(data);
-// }
-// putData();
-
+    let response = await fetch(BASE_URL, requestOptions);
+    let data = await response.json();
+    console.log(data);
+}
 ////////////////////////////////////////////////////////
 ////////////////////////PATCH DATA\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
-// async function patchData() {
-//   let messageObject = { firstName: "Alrik", lastName: "HE" };
+export async function patchData() {
+    let messageObject = { firstName: "Alrik", lastName: "HE" };
 
-//   const requestOptions = {
-//     method: "PATCH",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(messageObject),
-//   };
+    const requestOptions = {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(messageObject),
+    };
 
-//   let response = await fetch("https://demo1-3c759-default-rtdb.europe-west1.firebasedatabase.app/-NoCf2s5SInOIFR3X0VX/.json", requestOptions);
-//   let data = await response.json();
-//   console.log(data);
-// }
+    let response = await fetch("https://demo1-3c759-default-rtdb.europe-west1.firebasedatabase.app/-NoCf2s5SInOIFR3X0VX/.json", requestOptions);
+    let data = await response.json();
+    console.log(data);
+}
 
 ////////////////////////////////////////////////////////
 ////////////////////////Delete DATA\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
-// async function deleteData() {
-//   const requestOptions = {
-//     method: "DELETE",
-//   };
-//   let response = await fetch(BASE_URL, requestOptions);
-//   let data = await response.json();
-//   console.log(data);
-// }
+export async function deleteData() {
+    const requestOptions = {
+        method: "DELETE",
+    };
+    let response = await fetch(BASE_URL, requestOptions);
+    let data = await response.json();
+    console.log(data);
+}
 
