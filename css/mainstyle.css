@@ -55,7 +55,6 @@ nav a:hover {
 }
 
 /* form */
-
 .frontPage {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -118,7 +117,6 @@ p {
 }
 
 /* Hamburger menu */
-
 .hamburgerMenu {
   background-color: #383838;
   border: none;
@@ -181,7 +179,6 @@ a:visited {
 }
 
 /* Messageboard */
-
 .secretIdentity {
   text-align: center;
 }
@@ -213,7 +210,6 @@ a:visited {
 }
 
 /* About us */
-
 .aboutUsDiv {
   text-align: center;
 }

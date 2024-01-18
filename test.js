@@ -105,4 +105,3 @@ putData();
 // //unfinsished function
 // function userameAndPassword(name, password) {
 
-// }
