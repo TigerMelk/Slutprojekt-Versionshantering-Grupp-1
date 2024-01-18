@@ -7,11 +7,11 @@ import {
 // globala variabler
 const loginForm = document.querySelector("#logInForm");
 const registerForm = document.querySelector("#registerForm");
-const registerSwitch = document.querySelector("#switchToRegister");
 const loginSwitch = document.querySelector("#switchToLogIn");
+const registerSwitch = document.querySelector("#switchToRegister");
 const logIn = document.querySelector("#logIn");
-const logInButton = document.querySelector("#logInButton");
 const createAccount = document.querySelector("#createAccount");
+const logInButton = document.querySelector("#logInButton");
 const registerButton = document.querySelector("#registerButton");
 const mainPage = document.querySelector("#main");
 const navBar = document.querySelector("#nav");
@@ -26,22 +26,22 @@ const menuIcon = document.querySelector("#menuIcon");
 const menu = document.querySelector(".menu");
 
 // Byter mellan log in och register pages
-registerSwitch.addEventListener("click", registerHandler);
-loginSwitch.addEventListener("click", loginHandler);
-function registerHandler(event) {
+registerSwitch.addEventListener("click", registerSwitcher);
+loginSwitch.addEventListener("click", loginSwitcher);
+function registerSwitcher(event) {
   event.preventDefault();
   addClassToElement([logIn, loginForm], "hide");
   removeClassToElement([createAccount, registerForm], "hide");
 }
-function loginHandler(event) {
+function loginSwitcher(event) {
   event.preventDefault();
   addClassToElement([createAccount, registerForm], "hide");
   removeClassToElement([logIn, loginForm], "hide");
 }
 
-// Övergår till main page
-loginForm.addEventListener("submit", submitHandler);
-function submitHandler(event) {
+// Submit för login och register form
+loginForm.addEventListener("submit", loginHandler);
+function loginHandler(event) {
   event.preventDefault();
 
   const username = document.querySelector("#username").value;
@@ -49,18 +49,29 @@ function submitHandler(event) {
 
   console.log(username);
   console.log(password);
+
   addClassToElement([webName], "hideMobile");
   addClassToElement([frontPage], "hide");
   removeClassToElement([mainPage, navBar], "hide");
-  // if (activeElement.id == "logInButton") {
-  //   addClassToElement([webName], "hideMobile");
-  //   addClassToElement([frontPage], "hide");
-  //   removeClassToElement([mainPage, navBar], "hide");
-  // } else if (activeElement.id == "registerButton") {
-  //   addClassToElement([createAccount, registerButton], "hide");
-  //   removeClassToElement([logIn, logInButton], "hide");
-  // }
+
   loginForm.reset();
+}
+
+registerForm.addEventListener("submit", registerHandler);
+function registerHandler(event) {
+  event.preventDefault();
+
+  const username = document.querySelector("#registerUsername").value;
+  const password = document.querySelector("#registerPassword").value;
+
+  console.log(username);
+  console.log(password);
+
+  addClassToElement([webName], "hideMobile");
+  addClassToElement([frontPage], "hide");
+  removeClassToElement([mainPage, navBar], "hide");
+
+  registerForm.reset();
 }
 
 // Funktionaliteten åt navbar länkarna
@@ -92,10 +103,10 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
         break;
       case "logoutNav":
         addClassToElement(
-          [mainPage, registerButton, createAccount, navBar],
+          [mainPage, registerForm, createAccount, navBar],
           "hide"
         );
-        removeClassToElement([homePage, frontPage, logInButton, logIn], "hide");
+        removeClassToElement([homePage, frontPage, loginForm, logIn], "hide");
         removeClassToElement([webName], "hideMobile");
         closeHamburgerMenuInHamburgerMenu();
         break;
