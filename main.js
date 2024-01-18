@@ -3,7 +3,14 @@ import {
   addClassToElement,
   removeClassToElement,
 } from "./modules/interface.js";
-import { getData, postData, putData, patchData, deleteData } from "./modules/Fetch.js";
+
+import {
+  getData,
+  postData,
+  putData,
+  patchData,
+  deleteData,
+} from "./modules/fetch.js";
 
 // globala variabler
 const loginForm = document.querySelector("#logInForm");
@@ -57,10 +64,9 @@ function loginHandler(event) {
 
   loginForm.reset();
   let footerDOM = document.getElementById("footer");
-  console.log(footerDOM)
+  console.log(footerDOM);
   //footerDOM.setAttribute("postion", "relative")
-  footerDOM.style.position = "relative"
-
+  footerDOM.style.position = "relative";
 }
 
 registerForm.addEventListener("submit", registerHandler);
