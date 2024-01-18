@@ -55,6 +55,11 @@ function loginHandler(event) {
   removeClassToElement([mainPage, navBar], "hide");
 
   loginForm.reset();
+  let footerDOM = document.getElementById("footer");
+  console.log(footerDOM)
+  //footerDOM.setAttribute("postion", "relative")
+  footerDOM.style.position= "relative"
+
 }
 
 registerForm.addEventListener("submit", registerHandler);
