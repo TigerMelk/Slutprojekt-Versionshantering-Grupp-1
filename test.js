@@ -31,24 +31,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const BASE_URL =
-  "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/boys/.json";
+  "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/.json";
 
-// function writeUserData(userId, name, email, imageUrl) {
-//   set(ref(db, 'users/' + userId), {
-//     username: name,
-//     email: email,
-//     profile_picture: imageUrl
-//   });
+// async function getData() {
+//   let response = await fetch(BASE_URL);
+//   let data = await response.json();
+//   console.log(data);
 // }
-
-// writeUserData("hej", "hello", "tjena", "ok")
-
-async function getData() {
-  let response = await fetch(BASE_URL);
-  let data = await response.json();
-  console.log(data);
-}
-getData();
+// getData();
 // async function postData() {
 //   let messageObject = { text: "Hello world", time: new Date() };
 
@@ -62,20 +52,20 @@ getData();
 //   let data = await response.json();
 //   console.log(data);
 // }
-async function putData() {
-  let messageObject = { text: "Hello world put", time: new Date() };
+// async function putData() {
+//   let messageObject = { text: "Hello world put", time: new Date() };
 
-  const requestOptions = {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(messageObject),
-  };
+//   const requestOptions = {
+//     method: "PUT",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(messageObject),
+//   };
 
-  let response = await fetch(BASE_URL, requestOptions);
-  let data = await response.json();
-  console.log(data);
-}
-putData();
+//   let response = await fetch(BASE_URL, requestOptions);
+//   let data = await response.json();
+//   console.log(data);
+// }
+// putData();
 // async function patchData() {
 //   let messageObject = { firstName: "Alrik", lastName: "HE" };
 
@@ -99,5 +89,3 @@ putData();
 //   console.log(data);
 // }
 
-// //unfinsished function
-// function userameAndPassword(name, password) {
