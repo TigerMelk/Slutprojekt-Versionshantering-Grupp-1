@@ -13,6 +13,8 @@ import {
   deleteData,
 } from "./modules/fetch.js";
 
+
+let messageFieldDiv = document.querySelector("#messageFieldDiv");
 // globala variabler
 const loginForm = document.querySelector("#logInForm");
 const registerForm = document.querySelector("#registerForm");
@@ -56,8 +58,8 @@ function loginHandler(event) {
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
 
-  console.log(username);
-  console.log(password);
+  // console.log(username);
+  // console.log(password);
 
   addClassToElement([webName], "hideMobile");
   addClassToElement([frontPage], "hide");
@@ -134,23 +136,44 @@ document
   .addEventListener("click", (event) => {
     event.preventDefault();
     let messageInput = document.querySelector("#secretMessageInput").value;
-    let messageFieldDiv = document.querySelector("#messageFieldDiv");
+    // let messageFieldDiv = document.querySelector("#messageFieldDiv");
     let messageDiv = document.createElement("div");
     let messagePara = document.createElement("p");
     messageDiv.classList.add("message");
 
-    messagePara.innerText = messageInput;
-    messageDiv.append(messagePara);
-    messageFieldDiv.append(messageDiv);
-    postMessage();
-    messageFieldDiv.scrollTop = messageFieldDiv.scrollHeight;
-  });
+  // messagePara.innerText = messageInput;
+  // messageDiv.append(messagePara);
+  // messageFieldDiv.append(messageDiv);
+  
+  // Ton grupp 3 feature start//
+  postMessage(messageInput)
+  .then(getMessages)
+  .then(displayMessage)
+  messageFieldDiv.scrollTop = messageFieldDiv.scrollHeight;
+    // Ton grupp 3 feature end//
+    });
+
+   // Ton grupp 3 feature start//
+function displayMessage(message){
+  console.log(message);
+  for (const key in message) {
+    console.log(message[key].text);
+
+    const textDiv = document.createElement('p');
+    textDiv.innerText = message[key].text;
+    messageFieldDiv.append(textDiv);
+  }
+}
+ // Ton grupp 3 feature end//
+
+
+displayMessage();
 // function showMessages(){
 //   getMessages()
 // // }
 // getMessages();
 
-console.log(getMessages());
+// console.log(getMessages());
 // Hamburgermenu
 document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
   event.preventDefault();

@@ -87,7 +87,7 @@ async function postMessage() {
 async function getMessages() {
   let response = await fetch(BASE_URL);
   let data = await response.json();
-  // console.log(data);
+  console.log(data);
   return data;
 }
 
