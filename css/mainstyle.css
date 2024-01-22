@@ -301,11 +301,9 @@ small {
   text-align: center;
 }
 
-<<<<<<< Updated upstream
 .footerPosition {
   position: relative;
 }
-=======
 .message{
   border: solid black 2px;
   background-color: #383838;
@@ -314,4 +312,3 @@ small {
   margin-top: 10px;
   width: fit-content;
 }
->>>>>>> Stashed changes
