@@ -7,11 +7,11 @@ import { postMessage, getMessages } from "./test.js";
 
 import {
   getData,
-  postData,
+  register,
   putData,
   patchData,
   deleteData,
-} from "./modules/fetch.js";
+} from "/modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
 const loginForm = document.querySelector("#logInForm");
@@ -57,6 +57,9 @@ function loginHandler(event) {
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
 
+  /*vi ska checka här inne om username och password matchar
+   med user och pass som togs in via register och ligger i databasen*/
+
   // console.log(username);
   // console.log(password);
 
@@ -74,8 +77,8 @@ function registerHandler(event) {
   const username = document.querySelector("#registerUsername").value;
   const password = document.querySelector("#registerPassword").value;
 
-  console.log(username);
-  console.log(password);
+  register(username, password);
+  getData();
 
   addClassToElement([webName], "hideMobile");
   addClassToElement([frontPage], "hide");
@@ -83,7 +86,6 @@ function registerHandler(event) {
 
   registerForm.reset();
 }
-
 // Funktionaliteten åt navbar länkarna
 document.querySelectorAll("#nav a").forEach((menuLink) => {
   menuLink.addEventListener("click", (event) => {
