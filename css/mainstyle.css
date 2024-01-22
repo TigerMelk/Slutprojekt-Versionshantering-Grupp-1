@@ -231,8 +231,6 @@ a:visited {
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column; */
-  
-  
 }
 
 .sendMessageBtn {
@@ -317,7 +315,8 @@ small {
 .footerPosition {
   position: relative;
 }
-.message{
+
+.message {
   border: solid black 2px;
   background-color: #383838;
   color: #ededed;

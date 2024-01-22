@@ -91,7 +91,6 @@ async function getMessages() {
   return data;
 }
 
-
 // async function getData() {
 //   let response = await fetch(BASE_URL);
 //   let data = await response.json();
