@@ -213,6 +213,13 @@ a:visited {
   height: 600px;
   margin: auto auto;
   border-radius: 10px 10px 0 0;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  
+  
 }
 
 .sendMessageBtn {
@@ -294,6 +301,17 @@ small {
   text-align: center;
 }
 
+<<<<<<< Updated upstream
 .footerPosition {
   position: relative;
 }
+=======
+.message{
+  border: solid black 2px;
+  background-color: #383838;
+  color: #ededed;
+  display: block;
+  margin-top: 10px;
+  width: fit-content;
+}
+>>>>>>> Stashed changes
