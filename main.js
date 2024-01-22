@@ -129,7 +129,6 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
 });
 
 //Send message
-
 document
   .querySelector("#sendMessageButton")
   .addEventListener("click", (event) => {
@@ -144,6 +143,7 @@ document
     messageDiv.append(messagePara);
     messageFieldDiv.append(messageDiv);
     postMessage();
+    messageFieldDiv.scrollTop = messageFieldDiv.scrollHeight;
   });
 // function showMessages(){
 //   getMessages()
