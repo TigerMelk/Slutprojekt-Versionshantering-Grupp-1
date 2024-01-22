@@ -138,6 +138,10 @@ document
     let messageFieldDiv = document.querySelector("#messageFieldDiv");
     let messageDiv = document.createElement("div");
     let messagePara = document.createElement("p");
+    
+    const coolSound = new Audio("./sounds/snare-112754.mp3")
+    coolSound.play();
+    
     messageDiv.classList.add("message");
 
     messagePara.innerText = messageInput;
