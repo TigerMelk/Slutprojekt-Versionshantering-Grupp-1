@@ -100,8 +100,8 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "messageboardNav":
+        addClassToElement([footer], "footerPosition");
         removeClassToElement([messageboardPage], "hide");
-        removeClassToElement([footer], "footerPosition");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "aboutUsNav":
