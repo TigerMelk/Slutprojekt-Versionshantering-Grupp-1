@@ -19,8 +19,6 @@ const loginSwitch = document.querySelector("#switchToLogIn");
 const registerSwitch = document.querySelector("#switchToRegister");
 const logIn = document.querySelector("#logIn");
 const createAccount = document.querySelector("#createAccount");
-const logInButton = document.querySelector("#logInButton");
-const registerButton = document.querySelector("#registerButton");
 const mainPage = document.querySelector("#main");
 const navBar = document.querySelector("#nav");
 const frontPage = document.querySelector("#frontPage");
@@ -32,6 +30,8 @@ const aboutUsPage = document.querySelector("#aboutUs");
 const closeIcon = document.querySelector("#closeIcon");
 const menuIcon = document.querySelector("#menuIcon");
 const menu = document.querySelector(".menu");
+const contactForm = document.querySelector("#contactForm");
+const footer = document.querySelector("#footer");
 
 // Byter mellan log in och register pages
 registerSwitch.addEventListener("click", registerSwitcher);
@@ -63,11 +63,6 @@ function loginHandler(event) {
   removeClassToElement([mainPage, navBar], "hide");
 
   loginForm.reset();
-
-  //footerDOM.setAttribute("postion", "relative")
-  let footerDOM = document.getElementById("footer");
-  console.log(footerDOM);
-  footerDOM.style.position = "relative";
 }
 
 registerForm.addEventListener("submit", registerHandler);
@@ -85,11 +80,6 @@ function registerHandler(event) {
   removeClassToElement([mainPage, navBar], "hide");
 
   registerForm.reset();
-
-  //footerDOM.setAttribute("postion", "relative")
-  let footerDOM = document.getElementById("footer");
-  console.log(footerDOM);
-  footerDOM.style.position = "relative";
 }
 
 // Funktionaliteten åt navbar länkarna
@@ -105,18 +95,22 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
     switch (event.currentTarget.id) {
       case "homeNav":
         removeClassToElement([homePage], "hide");
+        removeClassToElement([footer], "footerPosition");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "messageboardNav":
         removeClassToElement([messageboardPage], "hide");
+        removeClassToElement([footer], "footerPosition");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "aboutUsNav":
+        addClassToElement([footer], "footerPosition");
         removeClassToElement([aboutUsPage], "hide");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "contactNav":
         removeClassToElement([contactPage], "hide");
+        removeClassToElement([footer], "footerPosition");
         closeHamburgerMenuInHamburgerMenu();
         break;
       case "logoutNav":
@@ -126,6 +120,7 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
         );
         removeClassToElement([homePage, frontPage, loginForm, logIn], "hide");
         removeClassToElement([webName], "hideMobile");
+        removeClassToElement([footer], "footerPosition");
         closeHamburgerMenuInHamburgerMenu();
         break;
     }
@@ -145,4 +140,10 @@ document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
     removeClassToElement([menuIcon], "hide");
     removeClassToElement([menu], "showMenu");
   }
+});
+
+// Contact funktion
+document.querySelector("#contactButton").addEventListener("click", (event) => {
+  event.preventDefault();
+  contactForm.reset();
 });

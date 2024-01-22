@@ -37,18 +37,22 @@
     <!--------- frontpage --------->
     <div id="frontPage" class="frontPage">
       <form id="logInForm">
-        <label for="username">(TEMP Login)Username</label>
-        <input type="text" id="username" />
-        <label for="password">Password</label>
-        <input type="password" id="password" />
-        <button id="logInButton">Log in</button>
+        <label for="username" class="frontPageLabel"
+          >(TEMP Login)Username</label
+        >
+        <input type="text" id="username" class="frontPageInput" />
+        <label for="password" class="frontPageLabel">Password</label>
+        <input type="password" id="password" class="frontPageInput" />
+        <button id="logInButton" class="frontPageButton">Log in</button>
       </form>
       <form id="registerForm" class="hide">
-        <label for="registerUsername">(TEMP Register)Username</label>
-        <input type="text" id="registerUsername" />
-        <label for="registerPassword">Password</label>
-        <input type="password" id="registerPassword" />
-        <button id="registerButton">Register</button>
+        <label for="registerUsername" class="frontPageLabel"
+          >(TEMP Register)Username</label
+        >
+        <input type="text" id="registerUsername" class="frontPageInput" />
+        <label for="registerPassword" class="frontPageLabel">Password</label>
+        <input type="password" id="registerPassword" class="frontPageInput" />
+        <button id="registerButton" class="frontPageButton">Register</button>
       </form>
       <div id="switchFrontPage">
         <!--------- login --------->
@@ -72,9 +76,16 @@
     <!--------- main --------->
     <main id="main" class="hide">
       <!--------- home  --------->
-      <section id="home">
-        <h1>Welcome to Spychat!</h1>
-        <p>cool text</p>
+      <section id="home" class="space">
+        <h1 class="pageTitle">Welcome to Spychat!</h1>
+        <p class="homeText">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure
+          ipsa recusandae aliquam sit minus ex mollitia totam aliquid, nostrum
+          id ea aspernatur aut iste natus error officia consequuntur amet. Dicta
+          et, facere aut natus fuga dolorum aspernatur eaque unde, iste tempora
+          debitis, velit consectetur ex. Debitis similique architecto
+          reiciendis!
+        </p>
       </section>
 
       <!--------- messageboard --------->
@@ -97,7 +108,7 @@
       <!--------- about us --------->
       <section id="aboutUs" class="hide">
         <div class="aboutUsDiv">
-          <h1>About Us</h1>
+          <h1 class="pageTitle">About Us</h1>
           <div class="about">
             <img src="./Images/about1.svg" alt="Logo" />
             <p>You wIll never find A pieceS of my secRet identity!</p>
@@ -124,24 +135,30 @@
       </section>
 
       <!--------- contact --------->
-      <section id="contact" class="hide">
-        <h1>Contact</h1>
+      <section id="contact" class="hide space">
+        <h1 class="pageTitle">Contact</h1>
         <form id="contactForm">
-          <label for="messageContact" id="contactLabel">Message</label>
+          <label
+            for="messageContact"
+            id="contactLabel"
+            class="contactLabelClass"
+            >Message</label
+          >
           <textarea
             name="messageContact"
             id="messageContactBox"
+            class="messageContactTextArea"
             cols="30"
             rows="10"
             placeholder="Type your message here..."
           ></textarea>
-          <button id="contactButton">Send</button>
+          <button id="contactButton" class="contactPageButton">Send</button>
         </form>
       </section>
     </main>
 
     <!--------- footer --------->
-    <footer id="footer" class="footerPostion">
+    <footer id="footer">
       <small>&copy; SpyChat</small>
       <div id="socialMedia">
         <ul>
