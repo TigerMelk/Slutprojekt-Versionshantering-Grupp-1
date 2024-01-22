@@ -138,6 +138,19 @@ p {
   padding: 4px;
 }
 
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 12px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* color of the thumb */
+}
+
 /* Hamburger menu */
 .hamburgerMenu {
   background-color: #383838;
@@ -214,10 +227,10 @@ a:visited {
   margin: auto auto;
   border-radius: 10px 10px 0 0;
   overflow-y: scroll;
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  flex-direction: column;
+  flex-direction: column; */
   
   
 }
@@ -311,4 +324,6 @@ small {
   display: block;
   margin-top: 10px;
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
