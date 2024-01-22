@@ -5,7 +5,6 @@ import {
 } from "./modules/interface.js";
 import { postMessage, getMessages } from "./test.js";
 
-
 import {
   getData,
   postData,
@@ -65,14 +64,6 @@ function loginHandler(event) {
   removeClassToElement([mainPage, navBar], "hide");
 
   loginForm.reset();
-<<<<<<< Updated upstream
-=======
-  let footerDOM = document.getElementById("footer");
-  console.log(footerDOM)
-  //footerDOM.setAttribute("postion", "relative")
-  footerDOM.style.position = "relative"
-
->>>>>>> Stashed changes
 }
 
 registerForm.addEventListener("submit", registerHandler);
@@ -137,28 +128,29 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
   });
 });
 
-
 //Send message
 
-document.querySelector("#sendMessageButton").addEventListener("click", (event) => {
-  event.preventDefault();
-  let messageInput = document.querySelector("#secretMessageInput").value;
-  let messageFieldDiv = document.querySelector("#messageFieldDiv");
-  let messageDiv = document.createElement("div");
-  let messagePara = document.createElement("p");
-  messageDiv.classList.add("message")
+document
+  .querySelector("#sendMessageButton")
+  .addEventListener("click", (event) => {
+    event.preventDefault();
+    let messageInput = document.querySelector("#secretMessageInput").value;
+    let messageFieldDiv = document.querySelector("#messageFieldDiv");
+    let messageDiv = document.createElement("div");
+    let messagePara = document.createElement("p");
+    messageDiv.classList.add("message");
 
-  messagePara.innerText = messageInput;
-  messageDiv.append(messagePara);
-  messageFieldDiv.append(messageDiv);
-  postMessage()
-})
+    messagePara.innerText = messageInput;
+    messageDiv.append(messagePara);
+    messageFieldDiv.append(messageDiv);
+    postMessage();
+  });
 // function showMessages(){
 //   getMessages()
 // // }
 // getMessages();
 
-console.log(getMessages())
+console.log(getMessages());
 // Hamburgermenu
 document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
   event.preventDefault();
