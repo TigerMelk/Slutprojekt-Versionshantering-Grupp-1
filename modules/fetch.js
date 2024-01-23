@@ -1,4 +1,7 @@
 /*Tests for fetch*/
+import { addClassToElement } from "./interface.js";
+import { removeClassToElement } from "./interface.js";
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
     getDatabase,
@@ -37,12 +40,22 @@ const BASE_URL =
 ////////////////////////GET DATA/ checka vad som finns inuti BASE_URL\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
 export async function getData() {
+    const username = document.querySelector("#username").value;
+    const password = document.querySelector("#password").value;
     let response = await fetch(BASE_URL);
     let data = await response.json();
     for (const userId in data) {
         const userName = data[userId].username;
         const userPass = data[userId].password;
         console.log("LOGIN; ", userId, userName, userPass);
+        if (username === userName && password === userPass) {
+            addClassToElement([webName], "hideMobile");
+            addClassToElement([frontPage], "hide");
+            removeClassToElement([mainPage, navBar], "hide");
+        }
+        else {
+            alert('wrong user name or password')
+        }
     }
 }
 ////////////////////////////////////////////////////////

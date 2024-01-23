@@ -56,16 +56,17 @@ function loginHandler(event) {
 
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
+  getData();
+  // if (username && password === ) {
 
-  /*vi ska checka här inne om username och password matchar
-   med user och pass som togs in via register och ligger i databasen*/
+  // }
 
   // console.log(username);
   // console.log(password);
 
-  addClassToElement([webName], "hideMobile");
-  addClassToElement([frontPage], "hide");
-  removeClassToElement([mainPage, navBar], "hide");
+  // addClassToElement([webName], "hideMobile");
+  // addClassToElement([frontPage], "hide");
+  // removeClassToElement([mainPage, navBar], "hide");
 
   loginForm.reset();
 }
