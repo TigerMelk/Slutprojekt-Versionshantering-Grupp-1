@@ -3,7 +3,7 @@ import {
   addClassToElement,
   removeClassToElement,
 } from "./modules/interface.js";
-import { postMessage, getMessages } from "./test.js";
+import { postMessage, getMessages } from "./modules/fetch.js";
 
 import {
   getData,
@@ -11,7 +11,7 @@ import {
   putData,
   patchData,
   deleteData,
-} from "/modules/fetch.js";
+} from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
 const loginForm = document.querySelector("#logInForm");
@@ -79,7 +79,6 @@ function registerHandler(event) {
   const password = document.querySelector("#registerPassword").value;
 
   register(username, password);
-  getData();
 
   addClassToElement([webName], "hideMobile");
   addClassToElement([frontPage], "hide");
