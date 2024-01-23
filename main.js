@@ -3,7 +3,6 @@ import {
   addClassToElement,
   removeClassToElement,
 } from "./modules/interface.js";
-import { postMessage, getMessages } from "./modules/fetch.js";
 
 import {
   getData,
@@ -11,6 +10,8 @@ import {
   putData,
   patchData,
   deleteData,
+  postMessage,
+  getMessages,
 } from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
@@ -53,21 +54,7 @@ function loginSwitcher(event) {
 loginForm.addEventListener("submit", loginHandler);
 function loginHandler(event) {
   event.preventDefault();
-
-  const username = document.querySelector("#username").value;
-  const password = document.querySelector("#password").value;
   getData();
-  // if (username && password === ) {
-
-  // }
-
-  // console.log(username);
-  // console.log(password);
-
-  // addClassToElement([webName], "hideMobile");
-  // addClassToElement([frontPage], "hide");
-  // removeClassToElement([mainPage, navBar], "hide");
-
   loginForm.reset();
 }
 
@@ -140,14 +127,8 @@ document
     messageFieldDiv.innerHTML = "";
     let messageInput = document.querySelector("#secretMessageInput").value;
 
-
     const coolSound = new Audio("./sounds/snare-112754.mp3");
     coolSound.play();
-
-
-    // messagePara.innerText = messageInput;
-    // messageDiv.append(messagePara);
-    // messageFieldDiv.append(messageDiv);
 
     // Ton grupp 3 feature start//
     postMessage(messageInput).then(getMessages).then(displayMessage);
@@ -161,11 +142,10 @@ function displayMessage(message) {
   for (const key in message) {
     console.log(message[key].text);
     let messageDiv = document.createElement("div");
-    let messagePara = document.createElement("p").innerText = message[key].text;
-    let messageUserName = document.createElement("p").innerText = "username";
+    let messagePara = (document.createElement("p").innerText =
+      message[key].text);
+    let messageUserName = (document.createElement("p").innerText = "username");
 
-    // const textDiv = document.createElement("p");
-    // textDiv.innerText = message[key].text;
     addClassToElement([messageDiv], "message");
     messageDiv.append(messagePara);
     messageFieldDiv.append(messageUserName, messageDiv);
