@@ -4,12 +4,7 @@ import {
   removeClassToElement,
 } from "./modules/interface.js";
 
-import {
-  getData,
-  register,
-  postMessage,
-  getMessages,
-} from "/modules/fetch.js";
+import { getData, register, postMessage, getMessages } from "/modules/fetch.js"; /// Ändra till "./modules/fetch.js"///
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
 const loginForm = document.querySelector("#logInForm");
