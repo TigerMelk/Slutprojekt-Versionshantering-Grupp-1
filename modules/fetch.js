@@ -56,8 +56,7 @@ export async function getData() {
     for (userId in data) {
         userName = data[userId].username;
         userPass = data[userId].password;
-
-        console.log("LOGIN; ", data[userId], userName, userPass);
+        console.log("LOGIN; ", userId, userName, userPass);
     }
     if (username === userName && password === userPass) {
         addClassToElement([webName], "hideMobile");
