@@ -139,13 +139,11 @@ document
     event.preventDefault();
     messageFieldDiv.innerHTML = "";
     let messageInput = document.querySelector("#secretMessageInput").value;
-    let messageDiv = document.createElement("div");
-    let messagePara = document.createElement("p");
+
 
     const coolSound = new Audio("./sounds/snare-112754.mp3");
     coolSound.play();
 
-    addClassToElement([messageDiv], "message");
 
     // messagePara.innerText = messageInput;
     // messageDiv.append(messagePara);
@@ -162,10 +160,15 @@ function displayMessage(message) {
   console.log(message);
   for (const key in message) {
     console.log(message[key].text);
+    let messageDiv = document.createElement("div");
+    let messagePara = document.createElement("p").innerText = message[key].text;
+    let messageUserName = document.createElement("p").innerText = "username";
 
-    const textDiv = document.createElement("p");
-    textDiv.innerText = message[key].text;
-    messageFieldDiv.append(textDiv);
+    // const textDiv = document.createElement("p");
+    // textDiv.innerText = message[key].text;
+    addClassToElement([messageDiv], "message");
+    messageDiv.append(messagePara);
+    messageFieldDiv.append(messageUserName, messageDiv);
     messageFieldDiv.scrollTop = messageFieldDiv.scrollHeight;
   }
 }
