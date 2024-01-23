@@ -329,3 +329,10 @@ small {
   margin-right: auto;
   border-radius: 5%;
 }
+
+/* Darkmode */
+
+.darkMode{
+  background-color: #383838;
+  color: #ededed;
+}
