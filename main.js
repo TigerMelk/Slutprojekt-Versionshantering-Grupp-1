@@ -4,7 +4,7 @@ import {
   removeClassToElement,
 } from "./modules/interface.js";
 
-import { getData, register, postMessage, getMessages } from "/modules/fetch.js"; /// Ändra till "./modules/fetch.js"///
+import { loginChecker, register, postMessage, getMessages } from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
 const loginForm = document.querySelector("#logInForm");
@@ -46,7 +46,7 @@ function loginSwitcher(event) {
 loginForm.addEventListener("submit", loginHandler);
 function loginHandler(event) {
   event.preventDefault();
-  getData();
+  loginChecker();
   loginForm.reset();
 }
 
