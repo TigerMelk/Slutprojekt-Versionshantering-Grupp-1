@@ -7,12 +7,9 @@ import {
 import {
   getData,
   register,
-  putData,
-  patchData,
-  deleteData,
   postMessage,
   getMessages,
-} from "./modules/fetch.js";
+} from "/modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
 const loginForm = document.querySelector("#logInForm");
