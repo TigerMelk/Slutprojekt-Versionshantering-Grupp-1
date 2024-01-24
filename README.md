@@ -2,6 +2,6 @@
 
 # Scroll funktion från Jesper
 
-# Fetch funktion och Post funktion från Ton
+# Display messages funktion från Ton
 
 # Ljud på knappen från Johanna

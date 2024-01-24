@@ -16,7 +16,7 @@ body {
   display: none !important;
 }
 
-#header {
+.headerClass {
   background-color: #383838;
   color: #fff;
   padding: 10px;
@@ -244,13 +244,16 @@ a:visited {
   height: 40px;
   border-radius: 25px;
   margin: 0px 5px;
+  background-color: #383838;
+  color: #fff;
+  border-radius: 20px;
 }
 
 .messageInput {
   width: 90%;
   margin: auto auto;
   border: #383838 solid 2px;
-  background-color: #c2c2c2;
+  background-color: #e0e0e0;
   border-top: none;
   padding: 10px 0px;
   border-radius: 0 0 10px 10px;
@@ -263,12 +266,11 @@ a:visited {
   width: 75%;
   height: 40px;
   margin-left: 10px;
-  background-color: #c2c2c2;
 }
 
 .message {
-  border: solid #ededed 2px;
-  background-color: #ededed;
+  border: solid #fff 2px;
+  background-color: #fff;
   padding: 6px 8px;
   display: block;
   margin-top: 6px;
@@ -320,11 +322,13 @@ a:visited {
   display: flex;
   margin: auto;
   width: 325px;
-  border: #ededed solid 2px;
+  border: black solid 1px;
+  padding: 6px;
+  border-radius: 8px;
 }
 
 /* Footer */
-footer {
+.footerClass {
   background-color: #383838;
   color: white;
   display: flex;
@@ -356,10 +360,4 @@ small {
 
 .footerPosition {
   position: relative;
-}
-
-/* Darkmode */
-.darkMode {
-  background-color: #383838;
-  color: #ededed;
 }
