@@ -61,10 +61,7 @@ export async function loginChecker() {
     if (username === userName.toLowerCase() && password === userPass) {
       isLoggedIn = true;
       break;
-    }
-    else break;
-
-
+    } else break;
   }
 
   if (isLoggedIn) {
@@ -76,6 +73,7 @@ export async function loginChecker() {
   }
 }
 const MESSAGES_URL = `https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/messages.json`;
+
 ////////////////////////////////////////////////////////
 ////////////////////////registrera\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
@@ -92,17 +90,7 @@ export async function register(username, password) {
   let data = await response.json();
   console.log(data);
 }
-////////////////////////////////////////////////////////
-////////////////////////Delete DATA\\\\\\\\\\\\\\\\\\\\\
-////////////////////////////////////////////////////////
-// async function deleteData() {
-//     const requestOptions = {
-//         method: "DELETE",
-//     };
-//     let response = await fetch(BASE_URL, requestOptions);
-//     let data = await response.json();
-//     console.log(data);
-// }
+
 ////////////////////////////////////////////////////////
 ////////////////////////Post message\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
@@ -120,6 +108,7 @@ export async function postMessage() {
   let data = await response.json();
   console.log(data);
 }
+
 ////////////////////////////////////////////////////////
 ////////////////////////Get message\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
