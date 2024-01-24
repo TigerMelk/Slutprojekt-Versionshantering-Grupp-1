@@ -3,15 +3,13 @@ import {
   addClassToElement,
   removeClassToElement,
 } from "./modules/interface.js";
-import { postMessage, getMessages } from "./test.js";
 
 import {
-  getData,
+  loginChecker,
   register,
-  putData,
-  patchData,
-  deleteData,
-} from "/modules/fetch.js";
+  postMessage,
+  getMessages,
+} from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
 const loginForm = document.querySelector("#logInForm");
@@ -53,20 +51,7 @@ function loginSwitcher(event) {
 loginForm.addEventListener("submit", loginHandler);
 function loginHandler(event) {
   event.preventDefault();
-
-  const username = document.querySelector("#username").value;
-  const password = document.querySelector("#password").value;
-
-  /*vi ska checka här inne om username och password matchar
-   med user och pass som togs in via register och ligger i databasen*/
-
-  // console.log(username);
-  // console.log(password);
-
-  addClassToElement([webName], "hideMobile");
-  addClassToElement([frontPage], "hide");
-  removeClassToElement([mainPage, navBar], "hide");
-
+  loginChecker();
   loginForm.reset();
 }
 
@@ -74,11 +59,12 @@ registerForm.addEventListener("submit", registerHandler);
 function registerHandler(event) {
   event.preventDefault();
 
-  const username = document.querySelector("#registerUsername").value;
+  const username = document
+    .querySelector("#registerUsername")
+    .value.toLowerCase();
   const password = document.querySelector("#registerPassword").value;
 
   register(username, password);
-  getData();
 
   addClassToElement([webName], "hideMobile");
   addClassToElement([frontPage], "hide");
@@ -139,17 +125,9 @@ document
     event.preventDefault();
     messageFieldDiv.innerHTML = "";
     let messageInput = document.querySelector("#secretMessageInput").value;
-    let messageDiv = document.createElement("div");
-    let messagePara = document.createElement("p");
 
     const coolSound = new Audio("./sounds/snare-112754.mp3");
     coolSound.play();
-
-    addClassToElement([messageDiv], "message");
-
-    // messagePara.innerText = messageInput;
-    // messageDiv.append(messagePara);
-    // messageFieldDiv.append(messageDiv);
 
     // Ton grupp 3 feature start//
     postMessage(messageInput).then(getMessages).then(displayMessage);
@@ -160,12 +138,17 @@ document
 // Ton grupp 3 feature start//
 function displayMessage(message) {
   console.log(message);
+  messageFieldDiv.innerHTML = "";
   for (const key in message) {
     console.log(message[key].text);
+    let messageDiv = document.createElement("div");
+    let messagePara = (document.createElement("p").innerText =
+      message[key].text);
+    let messageUserName = (document.createElement("p").innerText = "username");
 
-    const textDiv = document.createElement("p");
-    textDiv.innerText = message[key].text;
-    messageFieldDiv.append(textDiv);
+    addClassToElement([messageDiv], "message");
+    messageDiv.append(messagePara);
+    messageFieldDiv.append(messageUserName, messageDiv);
     messageFieldDiv.scrollTop = messageFieldDiv.scrollHeight;
   }
 }

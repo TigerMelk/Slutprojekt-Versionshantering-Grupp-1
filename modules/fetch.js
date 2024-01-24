@@ -1,105 +1,128 @@
 /*Tests for fetch*/
+import { addClassToElement } from "./interface.js";
+import { removeClassToElement } from "./interface.js";
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
-    getDatabase,
-    ref,
-    set,
-    onValue,
-    remove,
-    push,
-    onChildAdded,
-    onChildRemoved,
+  getDatabase,
+  ref,
+  set,
+  onValue,
+  remove,
+  push,
+  onChildAdded,
+  onChildRemoved,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
+const mainPage = document.querySelector("#main");
+const navBar = document.querySelector("#nav");
+const frontPage = document.querySelector("#frontPage");
+const webName = document.querySelector("#webName");
+
 const firebaseConfig = {
-    apiKey: "AIzaSyCf1AUREbV5BzyIb7_5nrj4fjFxcFL8jM8",
+  apiKey: "AIzaSyCf1AUREbV5BzyIb7_5nrj4fjFxcFL8jM8",
 
-    authDomain: "spychat-a5f8e.firebaseapp.com",
+  authDomain: "spychat-a5f8e.firebaseapp.com",
 
-    databaseURL:
-        "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL:
+    "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app",
 
-    projectId: "spychat-a5f8e",
+  projectId: "spychat-a5f8e",
 
-    storageBucket: "spychat-a5f8e.appspot.com",
+  storageBucket: "spychat-a5f8e.appspot.com",
 
-    messagingSenderId: "644385877729",
+  messagingSenderId: "644385877729",
 
-    appId: "1:644385877729:web:eeab1dc8e5763371a511a0",
+  appId: "1:644385877729:web:eeab1dc8e5763371a511a0",
 };
+
+let userId;
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const BASE_URL =
-    "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/users/.json";
+const USERS_URL =
+  "https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/users/.json";
 
 ////////////////////////////////////////////////////////
 ////////////////////////GET DATA/ checka vad som finns inuti BASE_URL\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
-export async function getData() {
-    let response = await fetch(BASE_URL);
-    let data = await response.json();
-    for (const userId in data) {
-        const userName = data[userId].username;
-        const userPass = data[userId].password;
-        console.log("LOGIN; ", userId, userName, userPass);
+export async function loginChecker() {
+  const username = document.querySelector("#username").value.toLowerCase();
+  const password = document.querySelector("#password").value;
+  let response = await fetch(USERS_URL);
+  let data = await response.json();
+  let isLoggedIn = false;
+
+  for (userId in data) {
+    let userName = data[userId].username;
+    let userPass = data[userId].password;
+    console.log("LOGIN; ", userId, userName, userPass);
+
+    if (username === userName.toLowerCase() && password === userPass) {
+      isLoggedIn = true;
+      break;
     }
+  }
+
+  if (isLoggedIn) {
+    addClassToElement([webName], "hideMobile");
+    addClassToElement([frontPage], "hide");
+    removeClassToElement([mainPage, navBar], "hide");
+  } else {
+    alert("Wrong username or password");
+  }
 }
+const MESSAGES_URL = `https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/messages.json`;
 ////////////////////////////////////////////////////////
 ////////////////////////registrera\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
 export async function register(username, password) {
-    let loginInfo = { username, password };
+  let loginInfo = { username, password };
 
-    const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginInfo),
-    };
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(loginInfo),
+  };
 
-    let response = await fetch(BASE_URL, requestOptions);
-    let data = await response.json();
-    console.log(data);
+  let response = await fetch(USERS_URL, requestOptions);
+  let data = await response.json();
+  console.log(data);
 }
-////////////////////////////////////////////////////////
-////////////////////////PUT DATA/ vet inte om vi behöver den TBH\\\\\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////////////////////////////////////
-export async function putData() {
-    let messageObject = { text: "Hello world put", time: new Date() };
-
-    const requestOptions = {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(messageObject),
-    };
-
-    let response = await fetch(BASE_URL, requestOptions);
-    let data = await response.json();
-    console.log(data);
-}
-////////////////////////////////////////////////////////
-////////////////////////PATCH DATA/ uppdatera saker\\\\\\\\\\\\\\\\\\\\\
-////////////////////////////////////////////////////////
-export async function patchData(property) {
-    const requestOptions = {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(messageObject),
-    };
-
-    let response = await fetch(BASE_URL, requestOptions);
-    let data = await response.json();
-    console.log(data);
-}
-
 ////////////////////////////////////////////////////////
 ////////////////////////Delete DATA\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
-export async function deleteData() {
-    const requestOptions = {
-        method: "DELETE",
-    };
-    let response = await fetch(BASE_URL, requestOptions);
-    let data = await response.json();
-    console.log(data);
+// async function deleteData() {
+//     const requestOptions = {
+//         method: "DELETE",
+//     };
+//     let response = await fetch(BASE_URL, requestOptions);
+//     let data = await response.json();
+//     console.log(data);
+// }
+////////////////////////////////////////////////////////
+////////////////////////Post message\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////////////////////////////////
+export async function postMessage() {
+  let message = document.querySelector("#secretMessageInput").value;
+  let messageObject = { text: message, time: new Date() };
+
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(messageObject),
+  };
+
+  let response = await fetch(MESSAGES_URL, requestOptions);
+  let data = await response.json();
+  console.log(data);
+}
+////////////////////////////////////////////////////////
+////////////////////////Get message\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////////////////////////////////
+export async function getMessages() {
+  let response = await fetch(MESSAGES_URL);
+  let data = await response.json();
+  console.log(data);
+  return data;
 }

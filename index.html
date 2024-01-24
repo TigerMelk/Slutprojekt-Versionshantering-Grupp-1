@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/mainstyle.css" />
     <link rel="stylesheet" href="./css/darkmode.css" />
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./Images/Black Logo.ico"
+      type="image/x-icon" />
     <script type="module" src="./main.js" defer></script>
+    <script src="./darkmode.js" defer></script>
     <title>SpyChat</title>
   </head>
   <body>
@@ -28,8 +32,7 @@
             class="hide"
             id="closeIcon"
             src="./Images/closeWhite.png"
-            alt="closeIcon"
-          />
+            alt="closeIcon" />
         </button>
       </nav>
     </header>
@@ -37,18 +40,14 @@
     <!--------- frontpage --------->
     <div id="frontPage" class="frontPage">
       <form id="logInForm">
-        <label for="username" class="frontPageLabel"
-          >(TEMP Login)Username</label
-        >
+        <label for="username" class="frontPageLabel">Username</label>
         <input type="text" id="username" class="frontPageInput" />
         <label for="password" class="frontPageLabel">Password</label>
         <input type="password" id="password" class="frontPageInput" />
         <button id="logInButton" class="frontPageButton">Log in</button>
       </form>
       <form id="registerForm" class="hide">
-        <label for="registerUsername" class="frontPageLabel"
-          >(TEMP Register)Username</label
-        >
+        <label for="registerUsername" class="frontPageLabel">Username</label>
         <input type="text" id="registerUsername" class="frontPageInput" />
         <label for="registerPassword" class="frontPageLabel">Password</label>
         <input type="password" id="registerPassword" class="frontPageInput" />
@@ -99,8 +98,7 @@
               class="messageTextInput"
               id="secretMessageInput"
               type="text"
-              placeholder="Secret message"
-            />
+              placeholder="Secret message" />
             <button id="sendMessageButton" class="sendMessageBtn">Send</button>
           </form>
         </div>
@@ -151,8 +149,7 @@
             class="messageContactTextArea"
             cols="30"
             rows="10"
-            placeholder="Type your message here..."
-          ></textarea>
+            placeholder="Type your message here..."></textarea>
           <button id="contactButton" class="contactPageButton">Send</button>
         </form>
       </section>
@@ -172,6 +169,7 @@
           </li>
         </ul>
       </div>
+      <button id="darkMode">Darkmode</button>
     </footer>
   </body>
 </html>
