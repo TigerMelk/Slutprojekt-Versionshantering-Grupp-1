@@ -126,6 +126,19 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
   });
 });
 
+// Anne-lie: Here is code for mute button
+const muteBtn = document.querySelector("#muteBtn");
+let isSoundMuted = false;
+
+muteBtn.addEventListener("click", ()=>{
+  isSoundMuted = !isSoundMuted;
+  muteBtn.innerHTML = isSoundMuted
+  ? '<i class="fa-solid fa-volume-xmark"></i>'
+  : '<i class="fa-solid fa-volume-high"></i>';
+  
+});
+// Anne-lie: mute button ends
+
 //Send message
 document
   .querySelector("#sendMessageButton")
@@ -135,7 +148,11 @@ document
     let messageInput = document.querySelector("#secretMessageInput").value;
 
     const coolSound = new Audio("./sounds/snare-112754.mp3");
-    coolSound.play();
+        // Anne-lie:mute button
+        if(!isSoundMuted){
+          coolSound.play();
+        }
+        // Anne-lie: mute button
 
     // Ton grupp 3 feature start//
     postMessage(messageInput).then(getMessages).then(displayMessage);
