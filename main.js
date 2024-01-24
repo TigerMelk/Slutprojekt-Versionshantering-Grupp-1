@@ -38,16 +38,15 @@ registerSwitch.addEventListener("click", registerSwitcher);
 loginSwitch.addEventListener("click", loginSwitcher);
 function registerSwitcher(event) {
   event.preventDefault();
-  addClassToElement([footer],"footerPosition")
+  addClassToElement([footer], "footerPosition");
   addClassToElement([logIn, loginForm], "hide");
   removeClassToElement([createAccount, registerForm], "hide");
 }
 function loginSwitcher(event) {
   event.preventDefault();
-  removeClassToElement([footer],"footerPosition")
-
   addClassToElement([createAccount, registerForm], "hide");
   removeClassToElement([logIn, loginForm], "hide");
+  removeClassToElement([footer], "footerPosition");
 }
 
 // Submit för login och register form
@@ -61,12 +60,13 @@ function loginHandler(event) {
 registerForm.addEventListener("submit", registerHandler);
 function registerHandler(event) {
   const password = document.querySelector("#registerPassword").value;
-  const confirmPassword = document.querySelector("#confirmRegisterPassword").value;
+  const confirmPassword = document.querySelector(
+    "#confirmRegisterPassword"
+  ).value;
   event.preventDefault();
-if(confirmPassword !==password ) return alert("Password is not the same")
+  if (confirmPassword !== password) return alert("Password is not the same!");
 
-
-  registerSwitcher(event)
+  registerSwitcher(event);
   const username = document
     .querySelector("#registerUsername")
     .value.toLowerCase();
@@ -76,6 +76,7 @@ if(confirmPassword !==password ) return alert("Password is not the same")
   addClassToElement([webName], "hideMobile");
   addClassToElement([frontPage], "hide");
   removeClassToElement([mainPage, navBar], "hide");
+  removeClassToElement([footer], "footerPosition");
 
   registerForm.reset();
 }
