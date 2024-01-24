@@ -117,3 +117,11 @@ export async function getMessages() {
   console.log(data);
   return data;
 }
+export async function deleteAllMessages() {
+  const requestOptions = {
+    method: "DELETE",
+  };
+  let response = await fetch(MESSAGES_URL, requestOptions);
+  let data = await response.json();
+  console.log(data);
+}

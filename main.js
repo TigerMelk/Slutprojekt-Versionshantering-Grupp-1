@@ -9,6 +9,7 @@ import {
   register,
   postMessage,
   getMessages,
+  deleteAllMessages,
 } from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
@@ -117,10 +118,12 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
           [mainPage, registerForm, createAccount, navBar],
           "hide"
         );
+
         removeClassToElement([homePage, frontPage, loginForm, logIn], "hide");
         removeClassToElement([webName], "hideMobile");
         removeClassToElement([footer], "footerPosition");
         closeHamburgerMenuInHamburgerMenu();
+        deleteAllMessages();
         break;
     }
   });
