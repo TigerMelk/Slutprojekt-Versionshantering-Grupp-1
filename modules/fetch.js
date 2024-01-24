@@ -58,7 +58,7 @@ export async function loginChecker() {
     let userPass = data[userId].password;
     console.log("LOGIN; ", userId, userName, userPass);
 
-    if (username === userName.toLowerCase() && password === userPass) {
+    if (username === userName && password === userPass) {
       isLoggedIn = true;
     }
   }
