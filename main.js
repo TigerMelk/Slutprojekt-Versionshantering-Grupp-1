@@ -144,7 +144,7 @@ function displayMessage(message) {
     let messageDiv = document.createElement("div");
     let messagePara = (document.createElement("p").innerText =
       message[key].text);
-    let messageUserName = (document.createElement("p").innerText = "username");
+    let messageUserName = (document.createElement("p").innerText = "Spy");
 
     addClassToElement([messageDiv], "message");
     messageDiv.append(messagePara);
