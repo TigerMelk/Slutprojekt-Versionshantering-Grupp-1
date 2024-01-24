@@ -47,7 +47,7 @@ const USERS_URL =
 ////////////////////////GET DATA/ checka vad som finns inuti BASE_URL\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
 export async function loginChecker() {
-  const username = document.querySelector("#username").value.toLowerCase();
+  const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
   let response = await fetch(USERS_URL);
   let data = await response.json();
@@ -60,8 +60,7 @@ export async function loginChecker() {
 
     if (username === userName.toLowerCase() && password === userPass) {
       isLoggedIn = true;
-      break;
-    } else break;
+    }
   }
 
   if (isLoggedIn) {
