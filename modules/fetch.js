@@ -54,7 +54,7 @@ export async function loginChecker() {
   let isLoggedIn = false;
 
   for (userId in data) {
-    let userName = data[userId].username.toLowerCase();
+    let userName = data[userId].username;
     let userPass = data[userId].password;
     console.log("LOGIN; ", userId, userName, userPass);
 
@@ -62,6 +62,9 @@ export async function loginChecker() {
       isLoggedIn = true;
       break;
     }
+    else break;
+
+
   }
 
   if (isLoggedIn) {
