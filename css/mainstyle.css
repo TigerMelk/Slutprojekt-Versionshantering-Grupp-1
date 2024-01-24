@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #ededed;
+}
+
 .hide {
   display: none !important;
 }
@@ -127,7 +131,6 @@ nav a:hover {
   color: #fff;
   border-radius: 20px;
   border: solid 2px #ededed;
-
 }
 
 p {
@@ -221,38 +224,57 @@ a:visited {
 
 /* Messageboard */
 .secretIdentity {
+  font-size: 30px;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .messageField {
   border: #383838 solid 2px;
   width: 90%;
   height: 600px;
-  margin: auto auto;
-  border-radius: 10px 10px 0 0;
+  margin: 1rem auto auto auto;
   overflow-y: scroll;
-  /* display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: column; */
+  padding-left: 12px;
+  background-color: #e0e0e0;
 }
 
 .sendMessageBtn {
   width: 50px;
+  height: 40px;
+  border-radius: 25px;
+  margin: 0px 5px;
 }
 
 .messageInput {
   width: 90%;
   margin: auto auto;
   border: #383838 solid 2px;
+  background-color: #c2c2c2;
   border-top: none;
-  padding-top: 10px;
+  padding: 10px 0px;
   border-radius: 0 0 10px 10px;
+  margin-bottom: 1rem;
 }
 
 .messageTextInput {
-  width: 80%;
+  padding: 0px 4px;
+  font-size: 16px;
+  width: 75%;
+  height: 40px;
   margin-left: 10px;
+  background-color: #c2c2c2;
+}
+
+.message {
+  border: solid #ededed 2px;
+  background-color: #ededed;
+  padding: 6px 8px;
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  width: fit-content;
+  border-radius: 10px;
 }
 
 /* About us */
@@ -262,10 +284,9 @@ a:visited {
 
 .about {
   margin-top: 40px;
-  
 }
 
-.about img{
+.about img {
   background-color: #ededed;
   border-radius: 5%;
   padding: 10px;
@@ -318,35 +339,27 @@ footer {
   height: 100px;
   border-top: #ededed 2px solid;
 }
+
 small {
   font-size: 1rem;
   font-weight: 500;
   width: 230px;
-  text-align: center;
+}
+
+.darkModeBtn {
+  height: 2rem;
+  width: 5rem;
+  border-radius: 15px;
+  background-color: #d17f1b;
+  color: #ededed;
 }
 
 .footerPosition {
   position: relative;
 }
 
-.message {
-  border: solid #ededed 2px;
-  background-color: #383838;
-  padding-right: 5px;
-  padding-left: 5px;
-  color: #ededed;
-  display: block;
-  margin-top: 10px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5%;
-}
-
 /* Darkmode */
-
-.darkMode{
+.darkMode {
   background-color: #383838;
   color: #ededed;
-  
 }
