@@ -72,7 +72,7 @@ export async function loginChecker() {
     alert("Wrong username or password");
   }
 }
-const MESSAGES_URL = `https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/messages.json`;
+const MESSAGES_URL = `https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/messages.json`;
 
 ////////////////////////////////////////////////////////
 ////////////////////////registrera\\\\\\\\\\\\\\\\\\\\\\\
