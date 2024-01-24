@@ -4,7 +4,12 @@ import {
   removeClassToElement,
 } from "./modules/interface.js";
 
-import { loginChecker, register, postMessage, getMessages } from "./modules/fetch.js";
+import {
+  loginChecker,
+  register,
+  postMessage,
+  getMessages,
+} from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
 const loginForm = document.querySelector("#logInForm");
@@ -54,7 +59,9 @@ registerForm.addEventListener("submit", registerHandler);
 function registerHandler(event) {
   event.preventDefault();
 
-  const username = document.querySelector("#registerUsername").value;
+  const username = document
+    .querySelector("#registerUsername")
+    .value.toLowerCase();
   const password = document.querySelector("#registerPassword").value;
 
   register(username, password);
@@ -131,6 +138,7 @@ document
 // Ton grupp 3 feature start//
 function displayMessage(message) {
   console.log(message);
+  messageFieldDiv.innerHTML = "";
   for (const key in message) {
     console.log(message[key].text);
     let messageDiv = document.createElement("div");

@@ -146,5 +146,3 @@ async function getMessages() {
 //   let data = await response.json();
 //   console.log(data);
 // }
-
-export { postMessage, getMessages };
