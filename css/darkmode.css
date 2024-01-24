@@ -82,6 +82,11 @@
   color: #04c417;
 }
 
+/* About us */
+.darkMode main #aboutUs .aboutUsDiv .about img {
+  background-color: #383838;
+}
+
 /* Contact */
 .darkMode main #contact form .messageContactTextArea {
   background-color: black;
