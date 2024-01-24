@@ -1,14 +1,14 @@
 import {
-  closeHamburgerMenuInHamburgerMenu,
-  addClassToElement,
-  removeClassToElement,
+	closeHamburgerMenuInHamburgerMenu,
+	addClassToElement,
+	removeClassToElement,
 } from "./modules/interface.js";
 
 import {
-  loginChecker,
-  register,
-  postMessage,
-  getMessages,
+	loginChecker,
+	register,
+	postMessage,
+	getMessages,
 } from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
@@ -37,140 +37,169 @@ const secretForm = document.querySelector("#secretForm");
 registerSwitch.addEventListener("click", registerSwitcher);
 loginSwitch.addEventListener("click", loginSwitcher);
 function registerSwitcher(event) {
-  event.preventDefault();
-  addClassToElement([logIn, loginForm], "hide");
-  removeClassToElement([createAccount, registerForm], "hide");
+	event.preventDefault();
+	addClassToElement([logIn, loginForm], "hide");
+	removeClassToElement([createAccount, registerForm], "hide");
 }
 function loginSwitcher(event) {
-  event.preventDefault();
-  addClassToElement([createAccount, registerForm], "hide");
-  removeClassToElement([logIn, loginForm], "hide");
+	event.preventDefault();
+	addClassToElement([createAccount, registerForm], "hide");
+	removeClassToElement([logIn, loginForm], "hide");
 }
 
 // Submit för login och register form
 loginForm.addEventListener("submit", loginHandler);
 function loginHandler(event) {
-  event.preventDefault();
-  loginChecker();
-  loginForm.reset();
+	event.preventDefault();
+	loginChecker();
+	loginForm.reset();
 }
 
 registerForm.addEventListener("submit", registerHandler);
 function registerHandler(event) {
-  event.preventDefault();
+	event.preventDefault();
 
-  const username = document
-    .querySelector("#registerUsername")
-    .value.toLowerCase();
-  const password = document.querySelector("#registerPassword").value;
+	const username = document
+		.querySelector("#registerUsername")
+		.value.toLowerCase();
+	const password = document.querySelector("#registerPassword").value;
 
-  register(username, password);
+	register(username, password);
 
-  addClassToElement([webName], "hideMobile");
-  addClassToElement([frontPage], "hide");
-  removeClassToElement([mainPage, navBar], "hide");
+	addClassToElement([webName], "hideMobile");
+	addClassToElement([frontPage], "hide");
+	removeClassToElement([mainPage, navBar], "hide");
 
-  registerForm.reset();
+	registerForm.reset();
 }
 // Funktionaliteten åt navbar länkarna
 document.querySelectorAll("#nav a").forEach((menuLink) => {
-  menuLink.addEventListener("click", (event) => {
-    event.preventDefault();
+	menuLink.addEventListener("click", (event) => {
+		event.preventDefault();
 
-    addClassToElement(
-      [homePage, messageboardPage, aboutUsPage, contactPage],
-      "hide"
-    );
+		addClassToElement(
+			[homePage, messageboardPage, aboutUsPage, contactPage],
+			"hide"
+		);
 
-    switch (event.currentTarget.id) {
-      case "homeNav":
-        removeClassToElement([homePage], "hide");
-        removeClassToElement([footer], "footerPosition");
-        closeHamburgerMenuInHamburgerMenu();
-        break;
-      case "messageboardNav":
-        addClassToElement([footer], "footerPosition");
-        removeClassToElement([messageboardPage], "hide");
-        closeHamburgerMenuInHamburgerMenu();
-        getMessages().then(displayMessage);
-        break;
-      case "aboutUsNav":
-        addClassToElement([footer], "footerPosition");
-        removeClassToElement([aboutUsPage], "hide");
-        closeHamburgerMenuInHamburgerMenu();
-        break;
-      case "contactNav":
-        removeClassToElement([contactPage], "hide");
-        removeClassToElement([footer], "footerPosition");
-        closeHamburgerMenuInHamburgerMenu();
-        break;
-      case "logoutNav":
-        addClassToElement(
-          [mainPage, registerForm, createAccount, navBar],
-          "hide"
-        );
-        removeClassToElement([homePage, frontPage, loginForm, logIn], "hide");
-        removeClassToElement([webName], "hideMobile");
-        removeClassToElement([footer], "footerPosition");
-        closeHamburgerMenuInHamburgerMenu();
-        break;
-    }
-  });
+		switch (event.currentTarget.id) {
+			case "homeNav":
+				removeClassToElement([homePage], "hide");
+				removeClassToElement([footer], "footerPosition");
+				closeHamburgerMenuInHamburgerMenu();
+				break;
+			case "messageboardNav":
+				addClassToElement([footer], "footerPosition");
+				removeClassToElement([messageboardPage], "hide");
+				closeHamburgerMenuInHamburgerMenu();
+				getMessages().then(displayMessage);
+				break;
+			case "aboutUsNav":
+				addClassToElement([footer], "footerPosition");
+				removeClassToElement([aboutUsPage], "hide");
+				closeHamburgerMenuInHamburgerMenu();
+				break;
+			case "contactNav":
+				removeClassToElement([contactPage], "hide");
+				removeClassToElement([footer], "footerPosition");
+				closeHamburgerMenuInHamburgerMenu();
+				break;
+			case "logoutNav":
+				addClassToElement(
+					[mainPage, registerForm, createAccount, navBar],
+					"hide"
+				);
+				removeClassToElement([homePage, frontPage, loginForm, logIn], "hide");
+				removeClassToElement([webName], "hideMobile");
+				removeClassToElement([footer], "footerPosition");
+				closeHamburgerMenuInHamburgerMenu();
+				break;
+		}
+	});
 });
 
 //Send message
 document
-  .querySelector("#sendMessageButton")
-  .addEventListener("click", (event) => {
-    event.preventDefault();
-    messageFieldDiv.innerHTML = "";
-    let messageInput = document.querySelector("#secretMessageInput").value;
+	.querySelector("#sendMessageButton")
+	.addEventListener("click", (event) => {
+		event.preventDefault();
+		messageFieldDiv.innerHTML = "";
+		let messageInput = document.querySelector("#secretMessageInput").value;
 
-    const coolSound = new Audio("./sounds/snare-112754.mp3");
-    coolSound.play();
+		const coolSound = new Audio("./sounds/snare-112754.mp3");
+		coolSound.play();
 
-    // Ton grupp 3 feature start//
-    postMessage(messageInput).then(getMessages).then(displayMessage);
-    // Ton grupp 3 feature end//
-    secretForm.reset();
-  });
+		// Ton grupp 3 feature start//
+		postMessage(messageInput).then(getMessages).then(displayMessage);
+		// Ton grupp 3 feature end//
+		secretForm.reset();
+	});
+// Melker grupp 5 feature start //
+function toTheTopFunc() {
+	const toTheTopBtn = document.createElement("button");
+	toTheTopBtn.id = "toTheTopBtn";
+	const toTheTopImg = document.createElement("img");
+	toTheTopImg.src = "./Images/arrow-up-solid.svg";
+	toTheTopImg.id = "toTheTopImg";
+	messageFieldDiv.append(toTheTopBtn);
+	toTheTopBtn.append(toTheTopImg);
+	messageFieldDiv.onscroll = function () {
+		scrollFunc();
+	};
+	function scrollFunc() {
+		if (
+			messageFieldDiv.scrollTop > 150 ||
+			document.documentElement.scrollTop > 150
+		) {
+			toTheTopBtn.style.display = "inline-block";
+		} else {
+			toTheTopBtn.style.display = "none";
+		}
+	}
+	toTheTopImg.addEventListener("click", (event) => {
+		messageFieldDiv.scrollTop = 0;
+		event.preventDefault();
+	});
+}
+// Melker grupp 5 feature end //
 
 // Ton grupp 3 feature start//
 function displayMessage(message) {
-  console.log(message);
-  messageFieldDiv.innerHTML = "";
-  for (const key in message) {
-    console.log(message[key].text);
-    let messageDiv = document.createElement("div");
-    let messagePara = (document.createElement("p").innerText =
-      message[key].text);
-    let messageUserName = (document.createElement("p").innerText = "username");
+	console.log(message);
+	messageFieldDiv.innerHTML = "";
+	toTheTopFunc();
+	for (const key in message) {
+		console.log(message[key].text);
+		let messageDiv = document.createElement("div");
+		let messagePara = (document.createElement("p").innerText =
+			message[key].text);
+		let messageUserName = (document.createElement("p").innerText = "username");
 
-    addClassToElement([messageDiv], "message");
-    messageDiv.append(messagePara);
-    messageFieldDiv.append(messageUserName, messageDiv);
-    messageFieldDiv.scrollTop = messageFieldDiv.scrollHeight;
-  }
+		addClassToElement([messageDiv], "message");
+		messageDiv.append(messagePara);
+		messageFieldDiv.append(messageUserName, messageDiv);
+		messageFieldDiv.scrollTop = messageFieldDiv.scrollHeight;
+	}
 }
 // Ton grupp 3 feature end//
 
 // Hamburgermenu
 document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
-  event.preventDefault();
+	event.preventDefault();
 
-  if (event.target.id == "menuIcon") {
-    addClassToElement([menu], "showMenu");
-    addClassToElement([menuIcon], "hide");
-    removeClassToElement([closeIcon], "hide");
-  } else if (event.target.id == "closeIcon") {
-    addClassToElement([closeIcon], "hide");
-    removeClassToElement([menuIcon], "hide");
-    removeClassToElement([menu], "showMenu");
-  }
+	if (event.target.id == "menuIcon") {
+		addClassToElement([menu], "showMenu");
+		addClassToElement([menuIcon], "hide");
+		removeClassToElement([closeIcon], "hide");
+	} else if (event.target.id == "closeIcon") {
+		addClassToElement([closeIcon], "hide");
+		removeClassToElement([menuIcon], "hide");
+		removeClassToElement([menu], "showMenu");
+	}
 });
 
 // Contact funktion
 document.querySelector("#contactButton").addEventListener("click", (event) => {
-  event.preventDefault();
-  contactForm.reset();
+	event.preventDefault();
+	contactForm.reset();
 });

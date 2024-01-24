@@ -1,352 +1,365 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 .hide {
-  display: none !important;
+	display: none !important;
 }
 
 .hideMobile {
-  display: none !important;
+	display: none !important;
 }
 
 #header {
-  background-color: #383838;
-  color: #fff;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 100px;
-  border-bottom: #ededed 2px solid;
+	background-color: #383838;
+	color: #fff;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 100px;
+	border-bottom: #ededed 2px solid;
 }
 
 .logo {
-  max-width: 50px;
-  height: auto;
-  z-index: 1000;
+	max-width: 50px;
+	height: auto;
+	z-index: 1000;
 }
 
 nav {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
 }
 
 nav ul {
-  list-style: none;
+	list-style: none;
 }
 
 nav ul li {
-  margin: 0 15px;
-  display: inline;
+	margin: 0 15px;
+	display: inline;
 }
 
 nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 nav a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 .pageTitle {
-  font-size: 40px;
-  display: flex;
-  margin-top: 15px;
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: space-evenly;
+	font-size: 40px;
+	display: flex;
+	margin-top: 15px;
+	align-items: center;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .space {
-  margin: 125px auto;
+	margin: 125px auto;
 }
 
 .homeText {
-  display: flex;
-  text-align: center;
-  margin: 10px 20px;
-  border: solid #ededed 2px;
-  border-radius: 5px;
+	display: flex;
+	text-align: center;
+	margin: 10px 20px;
+	border: solid #ededed 2px;
+	border-radius: 5px;
 }
 
 /* form */
 .frontPage {
-  margin: 125px 0px;
+	margin: 125px 0px;
 }
 
 .logInForm {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 30px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  align-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: row;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 30px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	align-content: space-around;
+	flex-wrap: wrap;
+	flex-direction: row;
 }
 
 .frontPageLabel {
-  font-size: 20px;
-  display: flex;
-  margin-bottom: 7px;
-  margin-top: 20px;
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: space-evenly;
+	font-size: 20px;
+	display: flex;
+	margin-bottom: 7px;
+	margin-top: 20px;
+	align-items: center;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .frontPageInput {
-  display: flex;
-  margin: auto auto;
-  width: 350px;
-  padding: 8px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  align-items: center;
+	display: flex;
+	margin: auto auto;
+	width: 350px;
+	padding: 8px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	align-items: center;
 }
 
 .frontPageButton {
-  display: block;
-  margin: 35px auto 0px auto;
-  justify-content: space-between;
-  width: 100px;
-  padding: 10px;
-  background-color: #383838;
-  color: #fff;
-  border-radius: 20px;
-  border: solid 2px #ededed;
-
+	display: block;
+	margin: 35px auto 0px auto;
+	justify-content: space-between;
+	width: 100px;
+	padding: 10px;
+	background-color: #383838;
+	color: #fff;
+	border-radius: 20px;
+	border: solid 2px #ededed;
 }
 
 p {
-  display: flex;
-  margin-bottom: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+	display: flex;
+	margin-bottom: 5px;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
 }
 .blueText {
-  color: blue;
-  padding: 4px;
+	color: blue;
+	padding: 4px;
 }
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
-  width: 12px; /* width of the scrollbar */
+	width: 12px; /* width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* color of the track */
+	background: #f1f1f1; /* color of the track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; /* color of the thumb */
+	background: #888; /* color of the thumb */
 }
 
 /* Hamburger menu */
 .hamburgerMenu {
-  background-color: #383838;
-  border: none;
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  width: 50px;
-  padding-top: 0;
-  z-index: 2;
+	background-color: #383838;
+	border: none;
+	position: absolute;
+	top: 25px;
+	right: 20px;
+	width: 50px;
+	padding-top: 0;
+	z-index: 2;
 }
 
 .menuIconLi {
-  list-style: none;
+	list-style: none;
 }
 
 #closeIcon {
-  width: 30px;
+	width: 30px;
 }
 
 #menuIcon {
-  width: 30px;
-  z-index: 1;
+	width: 30px;
+	z-index: 1;
 }
 
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transform: translateY(-100%);
-  transition-duration: 1.5s;
-  background-color: #383838;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: translateY(-100%);
+	transition-duration: 1.5s;
+	background-color: #383838;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 1;
 }
 
 .showMenu {
-  transform: translateY(0);
+	transform: translateY(0);
 }
 
 .menu li {
-  list-style: none;
+	list-style: none;
 }
 
 .menu a {
-  font-size: 2rem;
-  text-decoration: 1px underline transparent;
-  transition: text-decoration 300ms ease;
+	font-size: 2rem;
+	text-decoration: 1px underline transparent;
+	transition: text-decoration 300ms ease;
 }
 
 .menu a:hover {
-  text-decoration: 4px underline #585858;
+	text-decoration: 4px underline #585858;
 }
 
 .menu a:active,
 a:visited {
-  color: #ededed;
+	color: #ededed;
 }
 
 /* Messageboard */
 .secretIdentity {
-  text-align: center;
+	text-align: center;
 }
 
 .messageField {
-  border: #383838 solid 2px;
-  width: 90%;
-  height: 600px;
-  margin: auto auto;
-  border-radius: 10px 10px 0 0;
-  overflow-y: scroll;
-  /* display: flex;
+	border: #383838 solid 2px;
+	width: 90%;
+	height: 600px;
+	margin: auto auto;
+	border-radius: 10px 10px 0 0;
+	overflow-y: scroll;
+	position: relative;
+	scroll-behavior: smooth;
+	/* display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column; */
 }
-
+/* Melker grupp 5 feature start */
+#toTheTopBtn {
+	display: inline-block;
+	width: 25px;
+	position: absolute;
+	bottom: 0px;
+	right: 3px;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+#toTheTopImg {
+	position: sticky;
+}
+/* Melker grupp 5 feature end */
 .sendMessageBtn {
-  width: 50px;
+	width: 50px;
 }
 
 .messageInput {
-  width: 90%;
-  margin: auto auto;
-  border: #383838 solid 2px;
-  border-top: none;
-  padding-top: 10px;
-  border-radius: 0 0 10px 10px;
+	width: 90%;
+	margin: auto auto;
+	border: #383838 solid 2px;
+	border-top: none;
+	padding-top: 10px;
+	border-radius: 0 0 10px 10px;
 }
 
 .messageTextInput {
-  width: 80%;
-  margin-left: 10px;
+	width: 80%;
+	margin-left: 10px;
 }
 
 /* About us */
 .aboutUsDiv {
-  text-align: center;
+	text-align: center;
 }
 
 .about {
-  margin-top: 40px;
-  
+	margin-top: 40px;
 }
 
-.about img{
-  background-color: #ededed;
-  border-radius: 5%;
-  padding: 10px;
+.about img {
+	background-color: #ededed;
+	border-radius: 5%;
+	padding: 10px;
 }
 
 /* Contact */
 .contactPageButton {
-  display: block;
-  margin: 20px auto;
-  justify-content: space-between;
-  width: 100px;
-  padding: 10px;
-  background-color: #383838;
-  color: #fff;
-  border-radius: 20px;
-  border: solid #ededed 2px;
+	display: block;
+	margin: 20px auto;
+	justify-content: space-between;
+	width: 100px;
+	padding: 10px;
+	background-color: #383838;
+	color: #fff;
+	border-radius: 20px;
+	border: solid #ededed 2px;
 }
 
 .contactLabelClass {
-  font-size: 20px;
-  display: flex;
-  margin-bottom: 15px;
-  margin-top: 40px;
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: space-evenly;
+	font-size: 20px;
+	display: flex;
+	margin-bottom: 15px;
+	margin-top: 40px;
+	align-items: center;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .messageContactTextArea {
-  display: flex;
-  margin: auto;
-  width: 325px;
-  border: #ededed solid 2px;
+	display: flex;
+	margin: auto;
+	width: 325px;
+	border: #ededed solid 2px;
 }
 
 /* Footer */
 footer {
-  background-color: #383838;
-  color: white;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  padding: 2rem;
-  margin: 0 auto;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  border-top: #ededed 2px solid;
+	background-color: #383838;
+	color: white;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	padding: 2rem;
+	margin: 0 auto;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	border-top: #ededed 2px solid;
 }
 small {
-  font-size: 1rem;
-  font-weight: 500;
-  width: 230px;
-  text-align: center;
+	font-size: 1rem;
+	font-weight: 500;
+	width: 230px;
+	text-align: center;
 }
 
 .footerPosition {
-  position: relative;
+	position: relative;
 }
 
 .message {
-  border: solid #ededed 2px;
-  background-color: #383838;
-  padding-right: 5px;
-  padding-left: 5px;
-  color: #ededed;
-  display: block;
-  margin-top: 10px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5%;
+	border: solid #ededed 2px;
+	background-color: #383838;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #ededed;
+	display: block;
+	margin-top: 10px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5%;
 }
 
 /* Darkmode */
 
-.darkMode{
-  background-color: #383838;
-  color: #ededed;
-  
+.darkMode {
+	background-color: #383838;
+	color: #ededed;
 }

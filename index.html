@@ -1,175 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/mainstyle.css" />
-    <link rel="stylesheet" href="./css/darkmode.css" />
-    <link
-      rel="shortcut icon"
-      href="./Images/Black Logo.ico"
-      type="image/x-icon" />
-    <script type="module" src="./main.js" defer></script>
-    <script src="./darkmode.js" defer></script>
-    <title>SpyChat</title>
-  </head>
-  <body>
-    <!--------- header --------->
-    <header id="header">
-      <img src="./Images/Logo white.png" alt="Logo" class="logo" />
-      <p id="webName">SpyChat</p>
-      <nav id="nav" class="hide">
-        <ul class="menu">
-          <li><a href="#" id="homeNav">Home</a></li>
-          <li><a href="#" id="messageboardNav">Messageboard</a></li>
-          <li><a href="#" id="aboutUsNav">About Us</a></li>
-          <li><a href="#" id="contactNav">Contact</a></li>
-          <li><a href="#" id="logoutNav">Logout</a></li>
-        </ul>
-        <button class="hamburgerMenu">
-          <img id="menuIcon" src="./Images/menuWhite.png" alt="hamburgerMenu" />
-          <img
-            class="hide"
-            id="closeIcon"
-            src="./Images/closeWhite.png"
-            alt="closeIcon" />
-        </button>
-      </nav>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/mainstyle.css" />
+		<link rel="stylesheet" href="./css/darkmode.css" />
+		<link
+			rel="shortcut icon"
+			href="./Images/Black Logo.ico"
+			type="image/x-icon"
+		/>
+		<script type="module" src="./main.js" defer></script>
+		<script src="./darkmode.js" defer></script>
+		<title>SpyChat</title>
+	</head>
+	<body>
+		<!--------- header --------->
+		<header id="header">
+			<img src="./Images/Logo white.png" alt="Logo" class="logo" />
+			<p id="webName">SpyChat</p>
+			<nav id="nav" class="hide">
+				<ul class="menu">
+					<li><a href="#" id="homeNav">Home</a></li>
+					<li><a href="#" id="messageboardNav">Messageboard</a></li>
+					<li><a href="#" id="aboutUsNav">About Us</a></li>
+					<li><a href="#" id="contactNav">Contact</a></li>
+					<li><a href="#" id="logoutNav">Logout</a></li>
+				</ul>
+				<button class="hamburgerMenu">
+					<img id="menuIcon" src="./Images/menuWhite.png" alt="hamburgerMenu" />
+					<img
+						class="hide"
+						id="closeIcon"
+						src="./Images/closeWhite.png"
+						alt="closeIcon"
+					/>
+				</button>
+			</nav>
+		</header>
 
-    <!--------- frontpage --------->
-    <div id="frontPage" class="frontPage">
-      <form id="logInForm">
-        <label for="username" class="frontPageLabel">Username</label>
-        <input type="text" id="username" class="frontPageInput" />
-        <label for="password" class="frontPageLabel">Password</label>
-        <input type="password" id="password" class="frontPageInput" />
-        <button id="logInButton" class="frontPageButton">Log in</button>
-      </form>
-      <form id="registerForm" class="hide">
-        <label for="registerUsername" class="frontPageLabel">Username</label>
-        <input type="text" id="registerUsername" class="frontPageInput" />
-        <label for="registerPassword" class="frontPageLabel">Password</label>
-        <input type="password" id="registerPassword" class="frontPageInput" />
-        <button id="registerButton" class="frontPageButton">Register</button>
-      </form>
-      <div id="switchFrontPage">
-        <!--------- login --------->
-        <div id="logIn">
-          <p>
-            Make an account?
-            <span id="switchToRegister" class="blueText">click here!</span>
-          </p>
-        </div>
+		<!--------- frontpage --------->
+		<div id="frontPage" class="frontPage">
+			<form id="logInForm">
+				<label for="username" class="frontPageLabel">Username</label>
+				<input type="text" id="username" class="frontPageInput" />
+				<label for="password" class="frontPageLabel">Password</label>
+				<input type="password" id="password" class="frontPageInput" />
+				<button id="logInButton" class="frontPageButton">Log in</button>
+			</form>
+			<form id="registerForm" class="hide">
+				<label for="registerUsername" class="frontPageLabel">Username</label>
+				<input type="text" id="registerUsername" class="frontPageInput" />
+				<label for="registerPassword" class="frontPageLabel">Password</label>
+				<input type="password" id="registerPassword" class="frontPageInput" />
+				<button id="registerButton" class="frontPageButton">Register</button>
+			</form>
+			<div id="switchFrontPage">
+				<!--------- login --------->
+				<div id="logIn">
+					<p>
+						Make an account?
+						<span id="switchToRegister" class="blueText">click here!</span>
+					</p>
+				</div>
+				<!--------- create account --------->
+				<div id="createAccount" class="hide">
+					<p>
+						Already have an account?
+						<span id="switchToLogIn" class="blueText">click here!</span>
+					</p>
+				</div>
+			</div>
+		</div>
 
-        <!--------- create account --------->
-        <div id="createAccount" class="hide">
-          <p>
-            Already have an account?
-            <span id="switchToLogIn" class="blueText">click here!</span>
-          </p>
-        </div>
-      </div>
-    </div>
+		<!--------- main --------->
+		<main id="main" class="hide">
+			<!--------- home  --------->
+			<section id="home" class="space">
+				<h1 class="pageTitle">Welcome to Spychat!</h1>
+				<p class="homeText">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure
+					ipsa recusandae aliquam sit minus ex mollitia totam aliquid, nostrum
+					id ea aspernatur aut iste natus error officia consequuntur amet. Dicta
+					et, facere aut natus fuga dolorum aspernatur eaque unde, iste tempora
+					debitis, velit consectetur ex. Debitis similique architecto
+					reiciendis!
+				</p>
+			</section>
 
-    <!--------- main --------->
-    <main id="main" class="hide">
-      <!--------- home  --------->
-      <section id="home" class="space">
-        <h1 class="pageTitle">Welcome to Spychat!</h1>
-        <p class="homeText">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure
-          ipsa recusandae aliquam sit minus ex mollitia totam aliquid, nostrum
-          id ea aspernatur aut iste natus error officia consequuntur amet. Dicta
-          et, facere aut natus fuga dolorum aspernatur eaque unde, iste tempora
-          debitis, velit consectetur ex. Debitis similique architecto
-          reiciendis!
-        </p>
-      </section>
+			<!--------- messageboard --------->
+			<section id="messageboard" class="hide">
+				<!-- <h1>Messageboard</h1> -->
+				<h3 class="secretIdentity">Secret identity</h3>
+				<div class="messageField" id="messageFieldDiv"></div>
+				<div class="messageInput">
+					<form id="secretForm">
+						<input
+							class="messageTextInput"
+							id="secretMessageInput"
+							type="text"
+							placeholder="Secret message"
+						/>
+						<button id="sendMessageButton" class="sendMessageBtn">Send</button>
+					</form>
+				</div>
+			</section>
 
-      <!--------- messageboard --------->
-      <section id="messageboard" class="hide">
-        <!-- <h1>Messageboard</h1> -->
-        <h3 class="secretIdentity">Secret identity</h3>
-        <div class="messageField" id="messageFieldDiv"></div>
-        <div class="messageInput">
-          <form id="secretForm">
-            <input
-              class="messageTextInput"
-              id="secretMessageInput"
-              type="text"
-              placeholder="Secret message" />
-            <button id="sendMessageButton" class="sendMessageBtn">Send</button>
-          </form>
-        </div>
-      </section>
+			<!--------- about us --------->
+			<section id="aboutUs" class="hide">
+				<div class="aboutUsDiv">
+					<h1 class="pageTitle">About Us</h1>
+					<div class="about">
+						<img src="./Images/about1.svg" alt="Logo" />
+						<p>You wIll never find A pieceS of my secRet identity!</p>
+					</div>
 
-      <!--------- about us --------->
-      <section id="aboutUs" class="hide">
-        <div class="aboutUsDiv">
-          <h1 class="pageTitle">About Us</h1>
-          <div class="about">
-            <img src="./Images/about1.svg" alt="Logo" />
-            <p>You wIll never find A pieceS of my secRet identity!</p>
-          </div>
+					<div class="about">
+						<img src="./Images/about2.svg" alt="Logo" />
+						<p>FindIng me wIll Lead to your Permanent disappearance!</p>
+					</div>
 
-          <div class="about">
-            <img src="./Images/about2.svg" alt="Logo" />
-            <p>FindIng me wIll Lead to your Permanent disappearance!</p>
-          </div>
+					<div class="about">
+						<img src="./Images/about3.svg" alt="Logo" />
+						<p>Joining A secret order is a Very hArD thing!</p>
+					</div>
 
-          <div class="about">
-            <img src="./Images/about3.svg" alt="Logo" />
-            <p>Joining A secret order is a Very hArD thing!</p>
-          </div>
+					<div class="about">
+						<img src="./Images/about4.svg" alt="Logo" />
+						<p>
+							Abdullah Jamal is the leader of our group and our fall guy so
+							please catch him.
+						</p>
+					</div>
+				</div>
+			</section>
 
-          <div class="about">
-            <img src="./Images/about4.svg" alt="Logo" />
-            <p>
-              Abdullah Jamal is the leader of our group and our fall guy so
-              please catch him.
-            </p>
-          </div>
-        </div>
-      </section>
+			<!--------- contact --------->
+			<section id="contact" class="hide space">
+				<h1 class="pageTitle">Contact</h1>
+				<form id="contactForm">
+					<label
+						for="messageContact"
+						id="contactLabel"
+						class="contactLabelClass"
+						>Message</label
+					>
+					<textarea
+						name="messageContact"
+						id="messageContactBox"
+						class="messageContactTextArea"
+						cols="30"
+						rows="10"
+						placeholder="Type your message here..."
+					></textarea>
+					<button id="contactButton" class="contactPageButton">Send</button>
+				</form>
+			</section>
+		</main>
 
-      <!--------- contact --------->
-      <section id="contact" class="hide space">
-        <h1 class="pageTitle">Contact</h1>
-        <form id="contactForm">
-          <label
-            for="messageContact"
-            id="contactLabel"
-            class="contactLabelClass"
-            >Message</label
-          >
-          <textarea
-            name="messageContact"
-            id="messageContactBox"
-            class="messageContactTextArea"
-            cols="30"
-            rows="10"
-            placeholder="Type your message here..."></textarea>
-          <button id="contactButton" class="contactPageButton">Send</button>
-        </form>
-      </section>
-    </main>
-
-    <!--------- footer --------->
-    <footer id="footer">
-      <small>&copy; SpyChat</small>
-      <div id="socialMedia">
-        <ul>
-          <li class="X"><a href="https://twitter.com/" target="_blank"></a></li>
-          <li class="Youtube">
-            <a href="https://www.youtube.com" target="_blank"></a>
-          </li>
-          <li class="Instagram">
-            <a href="https://www.instagram.com/instagram/" target="_blank"></a>
-          </li>
-        </ul>
-      </div>
-      <button id="darkMode">Darkmode</button>
-    </footer>
-  </body>
+		<!--------- footer --------->
+		<footer id="footer">
+			<small>&copy; SpyChat</small>
+			<div id="socialMedia">
+				<ul>
+					<li class="X"><a href="https://twitter.com/" target="_blank"></a></li>
+					<li class="Youtube">
+						<a href="https://www.youtube.com" target="_blank"></a>
+					</li>
+					<li class="Instagram">
+						<a href="https://www.instagram.com/instagram/" target="_blank"></a>
+					</li>
+				</ul>
+			</div>
+			<button id="darkMode">Darkmode</button>
+		</footer>
+	</body>
 </html>
