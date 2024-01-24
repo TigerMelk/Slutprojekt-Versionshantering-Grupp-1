@@ -23,6 +23,12 @@
   height: 100px;
 }
 
+.frontPageButton:hover {
+  background: linear-gradient(180deg, #383838 0%, #A59D9D 100%);
+  border:  #383838 solid 1px;
+  cursor: pointer;
+}
+
 .logo {
   max-width: 50px;
   height: auto;
