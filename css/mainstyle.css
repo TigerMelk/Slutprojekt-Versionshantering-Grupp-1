@@ -237,23 +237,8 @@ a:visited {
   overflow-y: scroll;
   padding-left: 12px;
   background-color: #e0e0e0;
-  position: relative;
 }
-/* Melker grupp 5 feature start */
-#toTheTopBtn {
-	display: inline-block;
-	width: 25px;
-	position: absolute;
-	bottom: 0px;
-	right: 3px;
-	cursor: pointer;
-	background-color: transparent;
-	border: none;
-}
-#toTheTopImg {
-	position: sticky;
-}
-/* Melker grupp 5 feature end */
+
 .sendMessageBtn {
   width: 50px;
   height: 40px;

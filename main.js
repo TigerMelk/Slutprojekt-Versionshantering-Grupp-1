@@ -135,39 +135,10 @@ document
     secretForm.reset();
   });
 
-  // Melker grupp 5 feature start //
-function toTheTopFunc() {
-	const toTheTopBtn = document.createElement("button");
-	toTheTopBtn.id = "toTheTopBtn";
-	const toTheTopImg = document.createElement("img");
-	toTheTopImg.src = "./Images/arrow-up-solid.svg";
-	toTheTopImg.id = "toTheTopImg";
-	messageFieldDiv.append(toTheTopBtn);
-	toTheTopBtn.append(toTheTopImg);
-	messageFieldDiv.onscroll = function () {
-		scrollFunc();
-	};
-	function scrollFunc() {
-		if (
-			messageFieldDiv.scrollTop > 150 ||
-			document.documentElement.scrollTop > 150
-		) {
-			toTheTopBtn.style.display = "inline-block";
-		} else {
-			toTheTopBtn.style.display = "none";
-		}
-	}
-	toTheTopImg.addEventListener("click", (event) => {
-		messageFieldDiv.scrollTop = 0;
-		event.preventDefault();
-	});
-}
-// Melker grupp 5 feature end //
 // Ton grupp 3 feature start//
 function displayMessage(message) {
   console.log(message);
   messageFieldDiv.innerHTML = "";
-  toTheTopFunc()
   for (const key in message) {
     console.log(message[key].text);
     let messageDiv = document.createElement("div");
