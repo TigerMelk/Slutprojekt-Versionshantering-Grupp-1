@@ -6,4 +6,4 @@
 
 # Ljud på knappen från Johanna
 
-# Srolla högst upp på sidan funktion från Melker
+# Confirm password från Alrik
