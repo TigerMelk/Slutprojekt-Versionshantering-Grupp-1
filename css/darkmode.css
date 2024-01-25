@@ -107,14 +107,14 @@
   background-color: #262626;
 }
 
-.darkMode footer button {
+.darkMode footer .darkModeBtn {
   color: black;
 }
 
 /* Anne-lie */
-/* #muteBtn{
+.darkMode footer .muteBtn {
   font-size: 20px;
   background-color: transparent;
   border: none;
   color: #04c417;
-} */
+}
