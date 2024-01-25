@@ -29,7 +29,7 @@ const aboutUsPage = document.querySelector("#aboutUs");
 const closeIcon = document.querySelector("#closeIcon");
 const menuIcon = document.querySelector("#menuIcon");
 const menu = document.querySelector(".menu");
-const contactForm = document.querySelector("#contactForm");
+// const contactForm = document.querySelector("#contactForm");
 const footer = document.querySelector("#footer");
 const secretForm = document.querySelector("#secretForm");
 
@@ -170,7 +170,27 @@ document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
 });
 
 // Contact funktion
-document.querySelector("#contactButton").addEventListener("click", (event) => {
-  event.preventDefault();
-  contactForm.reset();
+// document.querySelector("#contactButton").addEventListener("click", (event) => {
+//   event.preventDefault();
+//   contactForm.reset();
+// });
+
+// Kamy grupp 4 contact form feature //
+
+const contactForm = document.querySelector("#contactButton");
+
+if (contactForm !== undefined && contactForm !== null) {
+    contactForm.addEventListener("click", (event) => {
+        event.preventDefault();
+        const popUp = document.querySelector("#popupWrapper");
+        popUp.style.display = "flex";
+        const backgroundShade = document.querySelector(".popup-overlay");
+        backgroundShade.style.display = "block";
+    });
+};
+
+const contactClose = document.querySelector("#closeBtn").addEventListener("click", (event) => {
+    event.preventDefault();
+    let popUp = document.querySelector("#popupWrapper").style.display = "none";
+    const backgroundShade = document.querySelector(".popup-overlay").style.display = "none";
 });
