@@ -30,7 +30,7 @@ const aboutUsPage = document.querySelector("#aboutUs");
 const closeIcon = document.querySelector("#closeIcon");
 const menuIcon = document.querySelector("#menuIcon");
 const menu = document.querySelector(".menu");
-const contactForm = document.querySelector("#contactForm");
+// const contactForm = document.querySelector("#contactForm");
 const footer = document.querySelector("#footer");
 const secretForm = document.querySelector("#secretForm");
 
@@ -202,7 +202,26 @@ document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
 });
 
 // Contact funktion
+// document.querySelector("#contactButton").addEventListener("click", (event) => {
+//   event.preventDefault();
+//   contactForm.reset();
+// });
+
+// Kamy grupp 4 contact form feature //
+
 document.querySelector("#contactButton").addEventListener("click", (event) => {
   event.preventDefault();
-  contactForm.reset();
+  let dialog = document.querySelector("#popupWrapper");
+  dialog.showModal();
+  dialog.style.display = "flex";
+  document.querySelector("#popupOly").style.display = "block";
+})
+
+document.querySelector("#closeBtn").addEventListener("click", (event) => {
+    event.preventDefault();
+    let dialog = document.querySelector("#popupWrapper");
+    dialog.close();
+    dialog.style.display = "none";
+    let popUpBack = document.querySelector("#popupOly");
+    popUpBack.style.display = "none";
 });
