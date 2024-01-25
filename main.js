@@ -184,17 +184,6 @@ document.querySelector("#contactButton").addEventListener("click", (event) => {
   dialog.style.display = "flex";
   document.querySelector("#popupOly").style.display = "block";
 })
-// const contactForm = document.querySelector("#contactButton");
-
-// if (contactForm !== undefined && contactForm !== null) {
-//     contactForm.addEventListener("click", (event) => {
-//         event.preventDefault();
-//         const popUp = document.querySelector("#popupWrapper");
-//         popUp.style.display = "flex";
-//         const backgroundOverlay = document.querySelector(".popup-overlay");
-//         backgroundOverlay.style.display = "block";
-//     });
-// };
 
 document.querySelector("#closeBtn").addEventListener("click", (event) => {
     event.preventDefault();
