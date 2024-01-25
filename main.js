@@ -177,20 +177,30 @@ document.querySelector(".hamburgerMenu").addEventListener("click", (event) => {
 
 // Kamy grupp 4 contact form feature //
 
-const contactForm = document.querySelector("#contactButton");
+document.querySelector("#contactButton").addEventListener("click", (event) => {
+  event.preventDefault();
+  let dialog = document.querySelector("#popupWrapper");
+  dialog.showModal();
+  dialog.style.display = "flex";
+  document.querySelector("#popupOly").style.display = "block";
+})
+// const contactForm = document.querySelector("#contactButton");
 
-if (contactForm !== undefined && contactForm !== null) {
-    contactForm.addEventListener("click", (event) => {
-        event.preventDefault();
-        const popUp = document.querySelector("#popupWrapper");
-        popUp.style.display = "flex";
-        const backgroundShade = document.querySelector(".popup-overlay");
-        backgroundShade.style.display = "block";
-    });
-};
+// if (contactForm !== undefined && contactForm !== null) {
+//     contactForm.addEventListener("click", (event) => {
+//         event.preventDefault();
+//         const popUp = document.querySelector("#popupWrapper");
+//         popUp.style.display = "flex";
+//         const backgroundOverlay = document.querySelector(".popup-overlay");
+//         backgroundOverlay.style.display = "block";
+//     });
+// };
 
-const contactClose = document.querySelector("#closeBtn").addEventListener("click", (event) => {
+document.querySelector("#closeBtn").addEventListener("click", (event) => {
     event.preventDefault();
-    let popUp = document.querySelector("#popupWrapper").style.display = "none";
-    const backgroundShade = document.querySelector(".popup-overlay").style.display = "none";
+    let dialog = document.querySelector("#popupWrapper");
+    dialog.close();
+    dialog.style.display = "none";
+    let popUpBack = document.querySelector("#popupOly");
+    popUpBack.style.display = "none";
 });
