@@ -133,12 +133,11 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
 const muteBtn = document.querySelector("#muteBtn");
 let isSoundMuted = false;
 
-muteBtn.addEventListener("click", ()=>{
+muteBtn.addEventListener("click", () => {
   isSoundMuted = !isSoundMuted;
   muteBtn.innerHTML = isSoundMuted
-  ? '<i class="fa-solid fa-volume-xmark"></i>'
-  : '<i class="fa-solid fa-volume-high"></i>';
-  
+    ? '<i class="fa-solid fa-volume-xmark"></i>'
+    : '<i class="fa-solid fa-volume-high"></i>';
 });
 // Anne-lie: mute button ends
 
@@ -151,11 +150,11 @@ document
     let messageInput = document.querySelector("#secretMessageInput").value;
 
     const coolSound = new Audio("./sounds/snare-112754.mp3");
-        // Anne-lie:mute button
-        if(!isSoundMuted){
-          coolSound.play();
-        }
-        // Anne-lie: mute button
+    // Anne-lie:mute button
+    if (!isSoundMuted) {
+      coolSound.play();
+    }
+    // Anne-lie: mute button
 
     // Ton grupp 3 feature start//
     postMessage(messageInput).then(getMessages).then(displayMessage);
@@ -170,13 +169,14 @@ function displayMessage(message) {
   for (const key in message) {
     console.log(message[key].text);
 
-    // Angelica 13:37 elit spy 
+    // Angelica 13:37 elit spy
     const date = new Date(message[key].time);
     const time = `${date.getHours()}:${date.getMinutes()}`;
     let messageDiv = document.createElement("div");
     let messagePara = (document.createElement("p").innerText =
       message[key].text);
-    let messageUserName = (document.createElement("p").innerText = time === '13:37'? "1337 Spy" : "Spy");
+    let messageUserName = (document.createElement("p").innerText =
+      time === "13:37" ? "Elite Spy" : "Spy");
 
     addClassToElement([messageDiv], "message");
     messageDiv.append(messagePara);
