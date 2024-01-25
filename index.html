@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/mainstyle.css" />
     <link rel="stylesheet" href="./css/darkmode.css" />
-    <link rel="stylesheet" href="./css/popup.css">
+    <link rel="stylesheet" href="./css/popup.css" />
     <link
       rel="shortcut icon"
       href="./Images/Black Logo.ico"
@@ -30,10 +30,14 @@
       <p id="webName">SpyChat</p>
       <nav id="nav" class="hide">
         <ul class="menu">
-          <li><a href="#" id="homeNav">Home</a></li>
-          <li><a href="#" id="messageboardNav">Message Board</a></li>
-          <li><a href="#" id="aboutUsNav">About Us</a></li>
-          <li><a href="#" id="contactNav">Contact</a></li>
+          <li><a href="#" id="homeNav" class="borderRight">Home</a></li>
+          <li>
+            <a href="#" id="messageboardNav" class="borderRight"
+              >Message Board</a
+            >
+          </li>
+          <li><a href="#" id="aboutUsNav" class="borderRight">About Us</a></li>
+          <li><a href="#" id="contactNav" class="borderRight">Contact</a></li>
           <li><a href="#" id="logoutNav">Logout</a></li>
         </ul>
         <button class="hamburgerMenu">
@@ -128,51 +132,53 @@
       <section id="aboutUs" class="hide">
         <div class="aboutUsDiv">
           <h1 class="pageTitle">About Us</h1>
-          <div class="about">
-            <img src="./Images/about1.svg" alt="Logo" id="aboutImageOne" />
-            <img
-              src="./Images/aboutDarkmode1.png"
-              alt="Logo"
-              id="aboutImageOneDark"
-              class="hide"
-            />
-            <p>You wIll never find A pieceS of my secRet identity!</p>
-          </div>
+          <div class="aboutFourDisplay">
+            <div class="about">
+              <img src="./Images/about1.svg" alt="Logo" id="aboutImageOne" />
+              <img
+                src="./Images/aboutDarkmode1.png"
+                alt="Logo"
+                id="aboutImageOneDark"
+                class="hide"
+              />
+              <p>You wIll never find A pieceS of my secRet identity!</p>
+            </div>
 
-          <div class="about">
-            <img src="./Images/about2.svg" alt="Logo" id="aboutImageTwo" />
-            <img
-              src="./Images/aboutDarkmode2.png"
-              alt="Logo"
-              id="aboutImageTwoDark"
-              class="hide"
-            />
-            <p>FindIng me wIll Lead to your Permanent disappearance!</p>
-          </div>
+            <div class="about">
+              <img src="./Images/about2.svg" alt="Logo" id="aboutImageTwo" />
+              <img
+                src="./Images/aboutDarkmode2.png"
+                alt="Logo"
+                id="aboutImageTwoDark"
+                class="hide"
+              />
+              <p>FindIng me wIll Lead to your Permanent disappearance!</p>
+            </div>
 
-          <div class="about">
-            <img src="./Images/about3.svg" alt="Logo" id="aboutImageThree" />
-            <img
-              src="./Images/aboutDarkmode3.png"
-              alt="Logo"
-              id="aboutImageThreeDark"
-              class="hide"
-            />
-            <p>Joining A secret order is a Very hArD thing!</p>
-          </div>
+            <div class="about">
+              <img src="./Images/about3.svg" alt="Logo" id="aboutImageThree" />
+              <img
+                src="./Images/aboutDarkmode3.png"
+                alt="Logo"
+                id="aboutImageThreeDark"
+                class="hide"
+              />
+              <p>Joining A secret order is a Very hArD thing!</p>
+            </div>
 
-          <div class="about">
-            <img src="./Images/about4.svg" alt="Logo" id="aboutImageFour" />
-            <img
-              src="./Images/aboutDarkmode4.png"
-              alt="Logo"
-              id="aboutImageFourDark"
-              class="hide"
-            />
-            <p>
-              Abdullah Jamal is the leader of our group and our fall guy so
-              please catch him.
-            </p>
+            <div class="about">
+              <img src="./Images/about4.svg" alt="Logo" id="aboutImageFour" />
+              <img
+                src="./Images/aboutDarkmode4.png"
+                alt="Logo"
+                id="aboutImageFourDark"
+                class="hide"
+              />
+              <p>
+                Abdullah Jamal is the leader of our group and our fall guy so
+                please catch him.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -201,9 +207,10 @@
 
       <!-- Kamy popup message for contact form -->
       <div class="popup-overlay" id="popupOly"></div>
-      <dialog id="popupWrapper"><h3>Thank you for your message!</h3>
+      <dialog id="popupWrapper">
+        <h3>Thank you for your message!</h3>
         <button id="closeBtn">Close</button>
-    </dialog>
+      </dialog>
     </main>
 
     <!--------- footer --------->

@@ -45,7 +45,7 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 10px;
   display: inline;
 }
 
@@ -392,5 +392,57 @@ small {
   margin-right: 2rem;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 781px) {
+  .muteBtn {
+    margin-right: 9rem;
+  }
+
+  .hamburgerMenu {
+    display: none;
+  }
+
+  .menu {
+    transform: translateY(0);
+    display: block;
+    background-color: transparent;
+    position: relative;
+    transition-duration: 0s;
+  }
+
+  .menu a {
+    font-size: 24px;
+  }
+
+  .borderRight {
+    border-right: #fff 1px solid;
+    padding-right: 16px;
+  }
+
+  .messageTextInput {
+    width: 85%;
+  }
+
+  .sendMessageBtn {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .aboutFourDisplay {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .about {
+    width: 50%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .space {
+    margin: 100px auto;
+  }
+  .messageContactTextArea {
+    width: 80%;
+    height: 200px;
+  }
 }
