@@ -47,7 +47,7 @@ const USERS_URL =
 ////////////////////////GET DATA/ checka vad som finns inuti BASE_URL\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
 export async function loginChecker() {
-  const username = document.querySelector("#username").value.toLowerCase();
+  const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
   let response = await fetch(USERS_URL);
   let data = await response.json();
@@ -58,9 +58,8 @@ export async function loginChecker() {
     let userPass = data[userId].password;
     console.log("LOGIN; ", userId, userName, userPass);
 
-    if (username === userName.toLowerCase() && password === userPass) {
+    if (username === userName && password === userPass) {
       isLoggedIn = true;
-      break;
     }
   }
 
@@ -72,7 +71,8 @@ export async function loginChecker() {
     alert("Wrong username or password");
   }
 }
-const MESSAGES_URL = `https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/messages.json`;
+const MESSAGES_URL = `https://spychat-a5f8e-default-rtdb.europe-west1.firebasedatabase.app/messages.json`;
+
 ////////////////////////////////////////////////////////
 ////////////////////////registrera\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
@@ -89,17 +89,7 @@ export async function register(username, password) {
   let data = await response.json();
   console.log(data);
 }
-////////////////////////////////////////////////////////
-////////////////////////Delete DATA\\\\\\\\\\\\\\\\\\\\\
-////////////////////////////////////////////////////////
-// async function deleteData() {
-//     const requestOptions = {
-//         method: "DELETE",
-//     };
-//     let response = await fetch(BASE_URL, requestOptions);
-//     let data = await response.json();
-//     console.log(data);
-// }
+
 ////////////////////////////////////////////////////////
 ////////////////////////Post message\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
@@ -117,6 +107,7 @@ export async function postMessage() {
   let data = await response.json();
   console.log(data);
 }
+
 ////////////////////////////////////////////////////////
 ////////////////////////Get message\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////
@@ -125,4 +116,12 @@ export async function getMessages() {
   let data = await response.json();
   console.log(data);
   return data;
+}
+export async function deleteAllMessages() {
+  const requestOptions = {
+    method: "DELETE",
+  };
+  let response = await fetch(MESSAGES_URL, requestOptions);
+  let data = await response.json();
+  console.log(data);
 }

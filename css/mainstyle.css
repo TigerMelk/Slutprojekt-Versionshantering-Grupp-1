@@ -145,6 +145,13 @@ p {
   padding: 4px;
 }
 
+/* Angelica */
+.frontPageButton:hover {
+  background: linear-gradient(180deg, #383838 0%, #a59d9d 100%);
+  border: #383838 solid 1px;
+  cursor: pointer;
+}
+
 /* SCROLLBAR */
 ::-webkit-scrollbar {
   width: 12px; /* width of the scrollbar */
@@ -235,7 +242,7 @@ a:visited {
   height: 600px;
   margin: 1rem auto auto auto;
   overflow-y: scroll;
-  padding-left: 12px;
+  padding: 0px 12px 0px 12px;
   background-color: #e0e0e0;
 }
 
@@ -277,6 +284,13 @@ a:visited {
   margin-bottom: 18px;
   width: fit-content;
   border-radius: 10px;
+}
+
+/* Angelica */
+.sendMessageBtn:hover {
+  background: linear-gradient(180deg, #383838 0%, #a59d9d 100%);
+  border: #383838 solid 1px;
+  cursor: pointer;
 }
 
 /* About us */
@@ -327,6 +341,13 @@ a:visited {
   border-radius: 8px;
 }
 
+/* Angelica */
+.contactPageButton:hover {
+  background: linear-gradient(180deg, #383838 0%, #a59d9d 100%);
+  border: #383838 solid 1px;
+  cursor: pointer;
+}
+
 /* Footer */
 .footerClass {
   background-color: #383838;
@@ -360,4 +381,16 @@ small {
 
 .footerPosition {
   position: relative;
+}
+
+/* Annelie */
+.muteBtn {
+  font-size: 20px;
+  border: none;
+  color: white;
+  background-color: transparent;
+  margin-right: 2rem;
+}
+
+@media only screen and (min-width: 481px) {
 }

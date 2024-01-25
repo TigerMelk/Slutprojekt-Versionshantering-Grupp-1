@@ -82,6 +82,11 @@
   color: #04c417;
 }
 
+/* About us */
+.darkMode main #aboutUs .aboutUsDiv .about img {
+  background-color: #383838;
+}
+
 /* Contact */
 .darkMode main #contact form .messageContactTextArea {
   background-color: black;
@@ -102,6 +107,14 @@
   background-color: #262626;
 }
 
-.darkMode footer button {
+.darkMode footer .darkModeBtn {
   color: black;
+}
+
+/* Anne-lie */
+.darkMode footer .muteBtn {
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  color: #04c417;
 }

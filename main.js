@@ -9,6 +9,7 @@ import {
   register,
   postMessage,
   getMessages,
+  deleteAllMessages,
 } from "./modules/fetch.js";
 
 const messageFieldDiv = document.querySelector("#messageFieldDiv");
@@ -38,6 +39,7 @@ registerSwitch.addEventListener("click", registerSwitcher);
 loginSwitch.addEventListener("click", loginSwitcher);
 function registerSwitcher(event) {
   event.preventDefault();
+  addClassToElement([footer], "footerPosition");
   addClassToElement([logIn, loginForm], "hide");
   removeClassToElement([createAccount, registerForm], "hide");
 }
@@ -45,6 +47,7 @@ function loginSwitcher(event) {
   event.preventDefault();
   addClassToElement([createAccount, registerForm], "hide");
   removeClassToElement([logIn, loginForm], "hide");
+  removeClassToElement([footer], "footerPosition");
 }
 
 // Submit för login och register form
@@ -57,18 +60,24 @@ function loginHandler(event) {
 
 registerForm.addEventListener("submit", registerHandler);
 function registerHandler(event) {
+  const password = document.querySelector("#registerPassword").value;
+  const confirmPassword = document.querySelector(
+    "#confirmRegisterPassword"
+  ).value;
   event.preventDefault();
+  if (confirmPassword !== password) return alert("Password is not the same!");
 
+  registerSwitcher(event);
   const username = document
     .querySelector("#registerUsername")
     .value.toLowerCase();
-  const password = document.querySelector("#registerPassword").value;
 
   register(username, password);
 
   addClassToElement([webName], "hideMobile");
   addClassToElement([frontPage], "hide");
   removeClassToElement([mainPage, navBar], "hide");
+  removeClassToElement([footer], "footerPosition");
 
   registerForm.reset();
 }
@@ -109,14 +118,28 @@ document.querySelectorAll("#nav a").forEach((menuLink) => {
           [mainPage, registerForm, createAccount, navBar],
           "hide"
         );
+
         removeClassToElement([homePage, frontPage, loginForm, logIn], "hide");
         removeClassToElement([webName], "hideMobile");
         removeClassToElement([footer], "footerPosition");
         closeHamburgerMenuInHamburgerMenu();
+        deleteAllMessages();
         break;
     }
   });
 });
+
+// Anne-lie: Here is code for mute button
+const muteBtn = document.querySelector("#muteBtn");
+let isSoundMuted = false;
+
+muteBtn.addEventListener("click", () => {
+  isSoundMuted = !isSoundMuted;
+  muteBtn.innerHTML = isSoundMuted
+    ? '<i class="fa-solid fa-volume-xmark"></i>'
+    : '<i class="fa-solid fa-volume-high"></i>';
+});
+// Anne-lie: mute button ends
 
 //Send message
 document
@@ -127,7 +150,11 @@ document
     let messageInput = document.querySelector("#secretMessageInput").value;
 
     const coolSound = new Audio("./sounds/snare-112754.mp3");
-    coolSound.play();
+    // Anne-lie:mute button
+    if (!isSoundMuted) {
+      coolSound.play();
+    }
+    // Anne-lie: mute button
 
     // Ton grupp 3 feature start//
     postMessage(messageInput).then(getMessages).then(displayMessage);
@@ -141,10 +168,15 @@ function displayMessage(message) {
   messageFieldDiv.innerHTML = "";
   for (const key in message) {
     console.log(message[key].text);
+
+    // Angelica 13:37 elit spy
+    const date = new Date(message[key].time);
+    const time = `${date.getHours()}:${date.getMinutes()}`;
     let messageDiv = document.createElement("div");
     let messagePara = (document.createElement("p").innerText =
       message[key].text);
-    let messageUserName = (document.createElement("p").innerText = "username");
+    let messageUserName = (document.createElement("p").innerText =
+      time === "13:37" ? "Elite Spy" : "Spy");
 
     addClassToElement([messageDiv], "message");
     messageDiv.append(messagePara);
