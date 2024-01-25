@@ -169,10 +169,14 @@ function displayMessage(message) {
   messageFieldDiv.innerHTML = "";
   for (const key in message) {
     console.log(message[key].text);
+
+    // Angelica 13:37 elit spy 
+    const date = new Date(message[key].time);
+    const time = `${date.getHours()}:${date.getMinutes()}`;
     let messageDiv = document.createElement("div");
     let messagePara = (document.createElement("p").innerText =
       message[key].text);
-    let messageUserName = (document.createElement("p").innerText = "Spy");
+    let messageUserName = (document.createElement("p").innerText = time === '13:37'? "1337 Spy" : "Spy");
 
     addClassToElement([messageDiv], "message");
     messageDiv.append(messagePara);
