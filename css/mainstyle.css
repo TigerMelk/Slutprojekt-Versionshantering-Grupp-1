@@ -235,17 +235,37 @@ a:visited {
   text-align: center;
   margin-top: 1rem;
 }
-
+#messageboard{
+position: relative;
+}
 .messageField {
   border: #383838 solid 2px;
   width: 90%;
   height: 600px;
   margin: 1rem auto auto auto;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   padding: 0px 12px 0px 12px;
   background-color: #e0e0e0;
+  position: relative;
 }
-
+/* Melker grupp 5 feature start */
+#toTheTopBtn {
+	display: inline-block;
+	width: 25px;
+  height: 25px;
+	position: absolute;
+bottom: 95px;
+right: 49px;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+#toTheTopImg {
+	position: absolute;
+  width: 100%;
+}
+/* Melker grupp 5 feature end */
 .sendMessageBtn {
   width: 50px;
   height: 40px;
@@ -444,5 +464,8 @@ small {
   .messageContactTextArea {
     width: 80%;
     height: 200px;
+  }
+  #toTheTopBtn{
+    right: 99px;
   }
 }
